@@ -2,3 +2,117 @@ Date:10/12/2021
 https://leetcode.com/problems/merge-intervals/
 https://leetcode.com/problems/sort-colors/submissions/
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+Next que from ASHISH
+https://leetcode.com/problems/design-add-and-search-words-data-structure/
+
+
+
+
+
+----------------------------------------------------------
+
+
+//ASHISH
+//first soln
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& v) {
+        if(v.size()==1){return v;}
+      sort(v.begin(),v.end());
+        vector<vector<int>> ans;
+        ans.push_back(v[0]);
+        for(int i = 1; i<v.size(); i++){
+            
+            if(ans.back()[1]<v[i][0]){
+                ans.push_back({v[i][0],v[i][1]});
+            }
+            else{
+                int new_first = ans.back()[0];
+                int new_second = max(ans.back()[1],v[i][1]);
+                ans.pop_back();
+                ans.push_back({new_first,new_second});
+            }
+            
+            
+        }
+        return ans;
+    }
+};
+
+//2nd soln
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+    int zero = 0;
+    int one = 0;
+    int two = 0;
+    for(auto x: nums){
+        if(x==0){zero++;}
+        else if(x==1){one++;}
+        else{two++;}
+    }
+    for(int i =0; i<nums.size(); i++){
+        if(zero){
+            nums[i] = 0;
+            zero--;
+        }
+        else if(one){
+            nums[i] = 1;
+            one--;
+        }
+        else{
+            nums[i] = 2;
+            two--;
+        }
+    }
+
+    }
+};
+
+
+
+//3rd solution
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+       if(s.length()==0 || s.length()==1){
+           return s.length();
+       }
+        
+        map<char,int> store;
+        for(int i =0; i<s.length();i++){
+            store[s[i]] = i;
+        }
+       
+     
+        vector<int>ans;
+        for(int i =0; i<s.length();i++){
+            ans.push_back(0);
+        }
+        ans[s.length()-1] = 1;
+        for(int i = s.length()-2;i>=0;i--){
+            if(store[s[i]]>i){
+                
+             int xx = store[s[i]]-i;
+             int yy = ans[i+1]+1;
+                ans[i] = min(xx,yy);
+                store[s[i]] = i;
+            }
+            else if(store[s[i]]<=i){
+                ans[i]=ans[i+1]+1;
+                
+                 store[s[i]] = i;
+                
+            }
+        }
+        sort(ans.begin(),ans.end());
+        return ans[ans.size()-1];
+        
+    }
+};
+
+-------------------------------------------------------------------
+
