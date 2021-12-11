@@ -1,14 +1,8 @@
 Date:10/12/2021
-https://leetcode.com/problems/merge-intervals/
-https://leetcode.com/problems/sort-colors/submissions/
-https://leetcode.com/problems/longest-substring-without-repeating-characters/
-
-Next que from ASHISH
-https://leetcode.com/problems/next-permutation/
-
-
-
-
+Gajendra -https://leetcode.com/problems/merge-intervals/
+Gajendra- https://leetcode.com/problems/sort-colors/submissions/
+Karan -https://leetcode.com/problems/longest-substring-without-repeating-characters/
+ASHISH - https://leetcode.com/problems/next-permutation/
 
 ----------------------------------------------------------
 
@@ -121,8 +115,21 @@ public:
 
 Dated: 11/12/2021
 
-Arpit 1st question
-https://leetcode.com/problems/count-complete-tree-nodes/submissions/
+
+Questions:
+Gajendra-https://leetcode.com/problems/nth-magical-number/
+Arpit- https://leetcode.com/problems/count-complete-tree-nodes/submissions/
+
+
+
+
+
+Solutions:
+
+----------------------------------------------------------------------------
+
+
+Arpit's Solution 2nd ques
 class Solution {
 public:
     int heightl(TreeNode* root){
@@ -158,15 +165,9 @@ public:
 };
 
 
-Questions:
-https://leetcode.com/problems/nth-magical-number/
 
 
 
-
-Solution:
-
-----------------------------------------------------------------------------
 Gajendra:
 1st ques:
 class Solution {
