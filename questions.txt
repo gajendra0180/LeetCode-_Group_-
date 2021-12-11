@@ -121,6 +121,9 @@ public:
 
 Dated: 11/12/2021
 
+Arpit 1st question
+https://leetcode.com/problems/count-complete-tree-nodes/submissions/
+
 Questions:
 https://leetcode.com/problems/nth-magical-number/
 
@@ -162,6 +165,5 @@ public:
 };
 
 -----------------------------------------------------------------------------
-Arpit 1st question
-https://leetcode.com/problems/count-complete-tree-nodes/submissions/
+
 
