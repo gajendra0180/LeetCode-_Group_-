@@ -121,6 +121,43 @@ public:
 
 Dated: 11/12/2021
 
+Arpit 1st question
+https://leetcode.com/problems/count-complete-tree-nodes/submissions/
+class Solution {
+public:
+    int heightl(TreeNode* root){
+        if(root==NULL)
+            return 0;
+        int h=0;
+      while(root){
+          h++;
+          root=root->left;
+      }
+        return h;
+    }
+     int heightr(TreeNode* root){
+        if(root==NULL)
+            return 0;
+        int h=0;
+      while(root){
+          h++;
+          root=root->right;
+      }
+        return h;
+    }
+    int countNodes(TreeNode* root) {
+        if(root==NULL)
+            return 0;
+        int l=heightl(root);
+        int r=heightr(root);
+        if(l==r){
+          return pow(2,l)-1;
+        }
+        return 1+countNodes(root->left)+countNodes(root->right);
+    }
+};
+
+
 Questions:
 https://leetcode.com/problems/nth-magical-number/
 
@@ -198,3 +235,7 @@ public:
 
 -----------------------------------------------------------------------------
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 220a8bba66c07ac446287a9879dd949553d41b73
