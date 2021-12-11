@@ -306,6 +306,43 @@ public:
     }
 };
 
+ASHISH: Gajendra que ans
+#define ll long long
+ll gcd(ll a, ll b){
+    if(a==0){return b;}
+    if(b==0){return a;}
+    return gcd(b, a%b);
+}
+ll lcm(ll a, ll b){
+    return (a*b)/gcd(a,b);
+}
+class Solution {
+public:
+    int nthMagicalNumber(int nn, int a, int b) {
+        ll aa = (ll)a;
+        ll bb = (ll)b;
+        ll n = nn;
+        ll left = 1;
+        ll k = lcm(aa,bb);
+        ll right = 1e18;
+        ll ans = 1e18;
+        while(left<=right){
+            ll mid = (left+right)/2;
+            ll target = (mid/aa)+(mid/bb)-(mid/k);
+            if(target<n){
+                left = mid+1;
+            }
+            else{
+                if(target==n){
+                    ans = min(ans, mid%(1000000007));
+                }
+                right = mid-1;
+            }
+           
+        }
+       return ans; 
+    }
+};
 
 
 Arpit:
