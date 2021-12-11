@@ -130,7 +130,8 @@ Solutions:
 ----------------------------------------------------------------------------
 
 
-Arpit's Solution 2nd ques
+Arpit:
+Solution 2nd question
 class Solution {
 public:
     int heightl(TreeNode* root){
@@ -165,7 +166,69 @@ public:
     }
 };
 
-
+Solution 3rd question
+class Solution {
+public:
+    TreeNode* recoverFromPreorder(string s) {
+        
+        map<string,pair<TreeNode*,int>>m;
+            int num=0;string v="";
+        TreeNode* z=NULL;int x;
+        TreeNode* root=NULL;
+        for(int i=0;i<s.length();i++){
+            if(s[i]>=48 && s[i]<=57){
+                 num=0;
+                while(i<s.length() && s[i]>=48 && s[i]<=57){
+                    num=num*10+(s[i]-48);
+                    i++;
+                }
+                i--;
+                  z=new TreeNode(num);
+                if(root==NULL)
+                    root=z;
+                else{
+                  root=m[v].first;
+                  x=m[v].second;
+                    if(x==0){
+                        root->left=z;
+                    }
+                    if(x==1){
+                        root->right=z;
+                    }
+                }
+            }
+            else{
+               int l=v.length();
+                 v="";
+               while(s[i]=='-'){
+                   v.push_back('-');
+                   i++;
+               }
+               int u=v.length();
+                i--;
+                if(m.find(v)==m.end()){
+                    m[v]={z,0};
+                }
+                else if(m.find(v)!=m.end() && m[v].second!=1){
+                    m[v].second++;
+                }
+                else{
+                    m[v]={z,0};
+                }
+                if(l>u){
+                for(auto it=++m.find(v);it!=m.end();it++){
+                    (*it).second.second=1;
+                }
+                }
+            }
+        }
+        if(m.size()==0){
+            return z;
+        }
+        auto pair=m["-"];
+        return pair.first;
+    }
+};
 
 
 
