@@ -116,3 +116,8 @@ public:
 
 -------------------------------------------------------------------
 
+
+
+
+Dated: 11/12/2021
+https://leetcode.com/problems/nth-magical-number/
