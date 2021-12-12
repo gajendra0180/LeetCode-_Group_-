@@ -572,6 +572,7 @@ Date:12/12/2021
 Questions:
 Gajendra -> https://leetcode.com/problems/ugly-number-iii
 Ashish->   https://leetcode.com/contest/weekly-contest-271/problems/maximum-fruits-harvested-after-at-most-k-steps/
+Karan-> https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 Solutions:
