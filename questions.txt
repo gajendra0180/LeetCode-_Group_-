@@ -618,5 +618,29 @@ public:
         
     }
 };
+Arpit
+solution 1st question:-
+class Solution {
+public:
+ int nthUglyNumber(int n, int a, int b, int c) {
+       int start=1;
+        int end=a*n;
+        long int ab=(long int)a*b/gcd(a,b);
+      long  int bc=(long int)c*b/gcd(c,b);
+        long int ca=(long int)a*c/gcd(a,c);
+         long int abc=(long int)a*bc/gcd(a,bc);
+        while(start<end){
+            int mid=start+(end-start)/2;
+           int total=mid/a+mid/b+mid/c-mid/ab-mid/bc-mid/ca+mid/abc;
+           cout<<total<<" ";
+            if(total<n){
+                start=mid+1;
+            }
+            else
+                end=mid;
+        }
+        return end;
+    }
+};
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
