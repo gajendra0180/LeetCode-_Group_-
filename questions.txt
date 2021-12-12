@@ -560,7 +560,19 @@ public:
 
 -----------------------------------------------------------------------------
 
-<<<<<<< HEAD
-=======
+ASHISH:
+Que
+https://leetcode.com/contest/weekly-contest-271/problems/maximum-fruits-harvested-after-at-most-k-steps/
 
->>>>>>> 220a8bba66c07ac446287a9879dd949553d41b73
+
+
+
+
+
+
+
+
+
+
+
+
