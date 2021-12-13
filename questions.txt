@@ -729,3 +729,34 @@ public:
 };
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Arpit question-
+ https://leetcode.com/problems/path-sum-iii/
+ 
+solution:-
+class Solution {
+public:
+    int ct=0;
+    int p=1;
+    void func(TreeNode* root,int s){
+        if(root==NULL) return ;
+        if(root->val==s){ ct++;}
+        func(root->left,s-root->val);
+        func(root->right,s-root->val);
+    }
+    void helper(TreeNode* root,int targetSum){
+        if(root==NULL) return;
+         func(root->left,targetSum);
+         func(root->right,targetSum);
+        helper(root->left,targetSum);
+        helper(root->right,targetSum);        
+    }
+    int pathSum(TreeNode* root, int targetSum) {
+       if(root==NULL) return 0;
+        if(p) {
+             func(root,targetSum);
+            p=0;
+        }
+       helper(root,targetSum);
+        return ct;
+    }
+};
