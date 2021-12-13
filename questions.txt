@@ -570,15 +570,209 @@ public:
 Date:12/12/2021
 
 Questions:
-Gajendra -> https://leetcode.com/problems/ugly-number-iii/
+Gajendra -> https://leetcode.com/problems/ugly-number-iii
+Ashish->   https://leetcode.com/contest/weekly-contest-271/problems/maximum-fruits-harvested-after-at-most-k-steps/
+Karan-> https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Solutions:
+
+1st ques:
+class Solution {
+public:
+    
+    bool condition(long long int mid,long long int l1,long long int l2,long long int l3,long long int l4,long long int a,long long int b,long long int c,long long int req)
+    {
+        long long int n=mid/a+mid/b+mid/c-mid/l1-mid/l2-mid/l3+mid/l4;
+        // cout<<mid<<" "<<n<<endl;
+        if(n<req)
+            return false;
+        return true;
+    }
+    
+    int nthUglyNumber(long long int n, long long int a, long long int b, long long int c) {
+        long long int left=1,right=1e18;
+        long long int lcm1=(a*b)/__gcd(a,b);
+        long long int lcm2=(b*c)/__gcd(b,c);
+        long long int lcm3=(a*c)/__gcd(a,c);
+        long long int lcm4=a*lcm2/(__gcd(a,lcm2));
+        // cout<<lcm1<<lcm2<<lcm3<<lcm4<<endl;
+        while(left<right)
+        {
+            long long int mid=left+(right-left)/2;
+            // cout<<left<<" @ "<<right<<endl;
+            if(condition(mid,lcm1,lcm2,lcm3,lcm4,a,b,c,n))
+                right=mid;
+            else
+                left=mid+1;
+        }
+        return left;
+        
+    }
+};
+
+2nd ques:
+
+class Solution {
+public:
+    int maxTotalFruits(vector<vector<int>>& v, int startPos, int k) {
+        unordered_map<int,int> m;
+        for(auto i:v)m[i[0]]=i[1];
+         int sum1=m[startPos];
+        for(int i=startPos+1;i<=k+startPos;i++)
+            sum1+=m[i];
+         int res=sum1;
+        int left=startPos-1,right=startPos+k;
+        while(left>=0&&left<right)
+        {
+            res=max(res,sum1);
+            sum1-=m[right];
+            right--;
+            sum1-=m[right];
+            right--;
+            sum1+=m[left];
+            left--;
+        }
+            res=max(res,sum1);
+            sum1=m[startPos],left=startPos-k,right=startPos+1;
+            for(int i=startPos-1;i>=startPos-k;i--)
+               sum1+=m[i];
+        
+          while(right<=v.back()[0]&&left<right)
+           {
+               res=max(res,sum1);
+               sum1-=m[left];
+               left++;
+               sum1-=m[left];
+               left++;
+               sum1+=m[right];
+               right++;
+           }
+            res=max(res,sum1);
+        return res;
+        
+    }
+};
+Arpit
+solution 1st question:-
+class Solution {
+public:
+ int nthUglyNumber(int n, int a, int b, int c) {
+       int start=1;
+        int end=a*n;
+        long int ab=(long int)a*b/gcd(a,b);
+      long  int bc=(long int)c*b/gcd(c,b);
+        long int ca=(long int)a*c/gcd(a,c);
+         long int abc=(long int)a*bc/gcd(a,bc);
+        while(start<end){
+            int mid=start+(end-start)/2;
+           int total=mid/a+mid/b+mid/c-mid/ab-mid/bc-mid/ca+mid/abc;
+           cout<<total<<" ";
+            if(total<n){
+                start=mid+1;
+            }
+            else
+                end=mid;
+        }
+        return end;
+    }
+};
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+<<<<<<< HEAD
 Ashish->
 https://leetcode.com/contest/weekly-contest-271/problems/maximum-fruits-harvested-after-at-most-k-steps/
+=======
+
+Date:13/12/2021
+
+Questions:
+Gajendra -> https://leetcode.com/problems/partition-equal-subset-sum/
+Arpit -> https://leetcode.com/problems/path-sum-iii/
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Solutions:
+
+1st: 
+class Solution {
+public:
+        struct HASH{
+	size_t operator()(const pair<int,int> &x)const{
+		return hash<int>()(x.first^x.second);
+	}
+};
+    unordered_map<pair<int,int>,int,HASH> m;
+    bool can(int sum,vector<int>&v,int i,int req)
+    {
+        if(i>=v.size())
+            return false;
+        if(sum==req)
+            return true;
+        if(sum>req)
+            return false;
+        
+        if(m.find({i,sum})!=m.end())
+            return m[{i,sum}];
+        
+        return m[{i,sum}]=can(sum+v[i],v,i+1,req)||can(sum,v,i+1,req);
+    }
+    
+    bool canPartition(vector<int>& nums) {
+        int sum=0;
+        for(auto i:nums)sum+=i;
+        if(sum%2==0)
+        {
+            sum/=2;
+            if(can(0,nums   ,0,sum))
+                return true;
+        }            
+        return false;
+    }
+};
+>>>>>>> c51f20e7cdca34996277348af064ab3cfcd169f6
 
 
 
 
+<<<<<<< HEAD
 Date 13 dec 
 Ashish:
 https://leetcode.com/problems/zigzag-conversion/
+=======
+Arpit's
+solution ques2:-
+class Solution {
+public:
+    int ct=0;
+    int p=1;
+    void func(TreeNode* root,int s){
+        if(root==NULL) return ;
+        if(root->val==s){ ct++;}
+        func(root->left,s-root->val);
+        func(root->right,s-root->val);
+    }
+    void helper(TreeNode* root,int targetSum){
+        if(root==NULL) return;
+         func(root->left,targetSum);
+         func(root->right,targetSum);
+        helper(root->left,targetSum);
+        helper(root->right,targetSum);        
+    }
+    int pathSum(TreeNode* root, int targetSum) {
+       if(root==NULL) return 0;
+        if(p) {
+             func(root,targetSum);
+            p=0;
+        }
+       helper(root,targetSum);
+        return ct;
+    }
+};
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+>>>>>>> c51f20e7cdca34996277348af064ab3cfcd169f6
