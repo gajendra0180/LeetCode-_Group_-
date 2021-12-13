@@ -575,3 +575,10 @@ Gajendra -> https://leetcode.com/problems/ugly-number-iii/
 
 Ashish->
 https://leetcode.com/contest/weekly-contest-271/problems/maximum-fruits-harvested-after-at-most-k-steps/
+
+
+
+
+Date 13 dec 
+Ashish:
+https://leetcode.com/problems/zigzag-conversion/
