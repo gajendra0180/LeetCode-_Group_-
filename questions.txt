@@ -691,6 +691,7 @@ Date:13/12/2021
 Questions:
 Gajendra -> https://leetcode.com/problems/partition-equal-subset-sum/
 Arpit -> https://leetcode.com/problems/path-sum-iii/
+Ashish -> https://leetcode.com/problems/zigzag-conversion/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Solutions:
@@ -731,16 +732,7 @@ public:
         return false;
     }
 };
->>>>>>> c51f20e7cdca34996277348af064ab3cfcd169f6
 
-
-
-
-<<<<<<< HEAD
-Date 13 dec 
-Ashish:
-https://leetcode.com/problems/zigzag-conversion/
-=======
 Arpit's
 solution ques2:-
 class Solution {
@@ -817,8 +809,4 @@ public:
 };
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Ashish 13 dec que
-Ashish:
-https://leetcode.com/problems/zigzag-conversion/
 
->>>>>>> c51f20e7cdca34996277348af064ab3cfcd169f6
