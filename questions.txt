@@ -724,6 +724,7 @@ Questions:
 Gajendra -> https://leetcode.com/problems/partition-equal-subset-sum/
 Arpit -> https://leetcode.com/problems/path-sum-iii/
 Ashish -> https://leetcode.com/problems/zigzag-conversion/
+Karan -> https://leetcode.com/problems/construct-string-from-binary-tree/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Solutions:
