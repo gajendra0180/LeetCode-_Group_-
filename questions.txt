@@ -988,7 +988,7 @@ Date: 14/12/2021
 
 Questions:
 Gajendra-> https://leetcode.com/problems/range-sum-of-bst/
-
+Arpit-> https://leetcode.com/problems/delete-node-in-a-bst/
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1020,5 +1020,42 @@ public:
         return res;
     }
 };
-
+solution 2nd question:-
+class Solution {
+public:
+    TreeNode* minvalright(TreeNode* root){
+        while(root->left){
+            root=root->left;
+        }
+        return root;
+    }
+    TreeNode* deleteNode(TreeNode* root, int key) {
+        if(root==NULL) return root;
+        if(key<root->val){
+            root->left=deleteNode(root->left,key);
+        }
+        else if(key>root->val){
+            root->right=deleteNode(root->right,key);
+        }
+        else{
+            TreeNode* temp=NULL;
+            if(root->left==NULL){
+                temp=root->right;
+                delete root;
+                return temp;
+            }
+            else if(root->right==NULL){
+                temp=root->left;
+                delete root;
+                return temp;
+            }
+            else{
+             temp=minvalright(root->right);
+            root->val=temp->val;
+            root->right=deleteNode(root->right,temp->val);
+            }
+        }
+        return root;
+    }
+};
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
