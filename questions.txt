@@ -991,6 +991,9 @@ Gajendra-> https://leetcode.com/problems/range-sum-of-bst/
 Arpit-> https://leetcode.com/problems/delete-node-in-a-bst/
 Karan -> https://leetcode.com/problems/my-calendar-i/
 
+Ashish-> 
+https://leetcode.com/contest/biweekly-contest-66/problems/minimum-number-of-buckets-required-to-collect-rainwater-from-houses/
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 Solution:
@@ -1057,6 +1060,49 @@ public:
             }
         }
         return root;
+    }
+};
+
+
+-----------------------
+Ashish : Gajendra que soln:
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+void finder(TreeNode* root, int &sum,int low, int max){
+    
+    if(root==NULL){return;}
+    if(root->val>=low && root->val<=max){
+        sum+=root->val;
+    }
+    if(root->val>=max){
+       finder(root->left,sum,low,max); 
+    }
+    else if(root->val<=low){
+        finder(root->right,sum,low,max);
+    }
+   
+   else{
+       finder(root->left,sum,low,max);
+       finder(root->right,sum,low,max);
+   }
+    
+    
+}
+class Solution {
+public:
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        int sum = 0;
+        finder(root,sum,low,high);
+        return sum;
     }
 };
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
