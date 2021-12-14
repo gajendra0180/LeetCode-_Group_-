@@ -1105,4 +1105,54 @@ public:
         return sum;
     }
 };
+
+
+ASHISH : arpit's que
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+
+class Solution {
+public:
+    int minFinder(TreeNode* root){
+       
+        int tt = root->val;
+        while(root){
+            tt = min(tt,root->val);
+            root = root->left;
+        }
+        return tt;
+    }
+    TreeNode* deleteNode(TreeNode* &root, int key) {
+        if(root==NULL){return NULL;}
+        if(root->val==key && root->right==NULL){
+            return root->left;
+        }
+        if(root->val==key && root->left==NULL){
+            return root->right;
+        }
+        if(root->val==key){
+            int pending = minFinder(root->right);
+            root->val = pending;
+            root->right = deleteNode(root->right,pending);
+            return root;
+        }
+        
+        if(root->val>key){
+            root->left = deleteNode(root->left,key);
+            return root;
+        }
+          root->right = deleteNode(root->right,key);
+          return root;
+        
+    }
+};
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
