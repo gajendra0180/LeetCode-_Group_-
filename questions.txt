@@ -990,14 +990,13 @@ Questions:
 Gajendra-> https://leetcode.com/problems/range-sum-of-bst/
 Arpit-> https://leetcode.com/problems/delete-node-in-a-bst/
 Karan -> https://leetcode.com/problems/my-calendar-i/
-
-Ashish-> 
-https://leetcode.com/contest/biweekly-contest-66/problems/minimum-number-of-buckets-required-to-collect-rainwater-from-houses/
+Ashish-> https://leetcode.com/contest/biweekly-contest-66/problems/minimum-number-of-buckets-required-to-collect-rainwater-from-houses/
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 Solution:
 
+Gajendra
 1st :
 class Solution {
 public:
@@ -1024,7 +1023,85 @@ public:
         return res;
     }
 };
-solution 2nd question:-
+
+2nd:
+class Solution {
+public:
+    TreeNode* findMin(TreeNode* r)
+    {
+        while(r->left!=NULL)    
+            r=r->left;
+        return r;
+    }
+    void del_node(TreeNode* &r,TreeNode*  d)
+    {
+        if(r==NULL)return;
+        if(r->left==d)
+        {
+            
+            r->left=r->left->right;
+            return;
+        }
+      if(r->right==d)
+        {
+            r->right=r->right->right;
+            return;
+        }
+        del_node(r->left,d);
+        del_node(r->right,d);
+        
+    }
+    void dn(TreeNode* &r,int k,TreeNode* tab)
+    {
+        if(r==NULL)
+            return;
+        
+        if(r->val==k)
+        {
+            if(r->left==NULL&&r->right==NULL)
+            {
+              //leaf node
+                // del_node(tab,r);
+                r=r->right;
+                return;
+            }
+            else if(r->right==NULL&&r->left!=NULL)
+            {
+                r=r->left;
+                return;
+            }
+            TreeNode* temp=(findMin(r->right));
+            cout<<temp->val;
+            TreeNode* gp=temp;
+            del_node(r,temp);
+            r->val=gp->val;
+            return;
+        }
+        dn(r->left,k,tab);
+        dn(r->right,k,tab);
+        
+    }
+    
+    TreeNode* deleteNode(TreeNode* root, int key) {
+        
+        if(root==NULL)
+            return root;
+        
+        if(root->val==key&&root->left==NULL&&root->right==NULL)
+            return NULL;
+
+        dn(root,key,root);
+        
+        return root;
+        
+    }
+};
+
+
+
+
+
+Arpit's solution 2nd question:-
 class Solution {
 public:
     TreeNode* minvalright(TreeNode* root){
