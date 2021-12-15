@@ -1258,4 +1258,62 @@ Questions:
 Gajendra -> https://leetcode.com/problems/insertion-sort-list/
 Karan -> https://leetcode.com/problems/fraction-to-recurring-decimal/
 
+ASHISH: 
+https://leetcode.com/contest/weekly-contest-267/problems/time-needed-to-buy-tickets/
+
 <<<<<<< HEAD
+
+
+
+OLD QUE  OF KARAN
+my calender 1 soln from ashish
+
+class MyCalendar {
+public:
+    // just a map to take care of interval of prev books
+    map<int,int> track;
+    MyCalendar() {
+        
+    }
+    
+//     try to understand this concept like if there are two intervals like   7----->10  and 2--------->10 so its beneficial to take 2-----> 10 in track map since 7 lies between them so track map has key as ending of event and value as minimum time of beginnig of event 
+    
+    
+    
+    
+    bool book(int start, int end) {
+        end--;
+        for(auto x: track){
+            if(x.first>=start){
+//                checking any interval found with which given slot is overlapping or not 
+                    if(x.second<=end){
+                        return false;
+                    }
+                
+            }
+        }
+        
+        // here we are checking ending time is already in track map in that case we will just try to minimise the beginning time 
+        if(track.find(end)!=track.end()){
+            track[end] = min(start,track[end]);
+        }
+        else{
+            track[end] = start;
+        }
+        return true;
+        
+        
+    }
+};
+
+/**
+ * Your MyCalendar object will be instantiated and called as such:
+ * MyCalendar* obj = new MyCalendar();
+ * bool param_1 = obj->book(start,end);
+ */
+
+
+
+
+
+
