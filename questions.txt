@@ -1322,3 +1322,4 @@ Date: 17/12/2021
 Questions: 
 
 Gajendra -> https://leetcode.com/problems/maximal-square/
+Karan -> https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
