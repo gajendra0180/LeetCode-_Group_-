@@ -1323,3 +1323,32 @@ Questions:
 
 Gajendra -> https://leetcode.com/problems/maximal-square/
 Karan -> https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Solution:
+
+2nd ques(Karan):
+class Solution {
+public:
+    int minAddToMakeValid(string s) {
+        int gp=0,res=0;
+        for(auto i:s)
+        {
+            if(i=='(')
+                gp++;
+            else
+            {
+               
+                if(gp<=0)
+                    res++;
+                else
+                     gp--;
+            }
+        }
+        return res+gp;
+    }
+};
+
+------------------------------------------------------------------------------------------------------------------------------------------
