@@ -1317,3 +1317,8 @@ public:
 
 
 
+Date: 17/12/2021
+
+Questions: 
+
+Gajendra -> https://leetcode.com/problems/maximal-square/
