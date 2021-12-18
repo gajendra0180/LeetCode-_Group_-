@@ -1357,7 +1357,35 @@ public:
 
 
 18 dec 
-ASHISH:-
-https://leetcode.com/problems/container-with-most-water/
 
->>>>>>> ead315da1f3f1092186d90dd50bd15cb4b4d2c4b
+questions:
+
+ASHISH -> https://leetcode.com/problems/container-with-most-water/
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Solutions:
+
+Gajendra
+1st quest:
+class Solution {
+public:
+    int maxArea(vector<int>& v) {
+        int left=0,right=v.size()-1;
+        int maxx=0;
+        while(left<=right)
+        {
+            int quantity=(right-left)*(min(v[left],v[right]));
+            if(v[left]<=v[right])
+                left++;
+            else
+                right--;
+            maxx=max(quantity,maxx);
+        }
+        return maxx;
+    }
+};
+
+
+_------------------------------------------------------------------------------------------------------------------------------------------------
+
