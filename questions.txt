@@ -1323,3 +1323,41 @@ Questions:
 
 Gajendra -> https://leetcode.com/problems/maximal-square/
 Karan -> https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+<<<<<<< HEAD
+=======
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Solution:
+
+2nd ques(Karan):
+class Solution {
+public:
+    int minAddToMakeValid(string s) {
+        int gp=0,res=0;
+        for(auto i:s)
+        {
+            if(i=='(')
+                gp++;
+            else
+            {
+               
+                if(gp<=0)
+                    res++;
+                else
+                     gp--;
+            }
+        }
+        return res+gp;
+    }
+};
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+18 dec 
+ASHISH:-
+https://leetcode.com/problems/container-with-most-water/
+
+>>>>>>> ead315da1f3f1092186d90dd50bd15cb4b4d2c4b
