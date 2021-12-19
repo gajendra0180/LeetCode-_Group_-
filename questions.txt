@@ -1379,6 +1379,7 @@ public:
             if(v[left]<=v[right])
                 left++;
             else
+
                 right--;
             maxx=max(quantity,maxx);
         }
@@ -1389,3 +1390,12 @@ public:
 
 _------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+Date:19/12/2021
+
+Questions:
+Gajendra-> https://leetcode.com/contest/weekly-contest-272/problems/minimum-operations-to-make-the-array-k-increasing/
+	  Hints: b)  https://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+		 a)  https://www.geeksforgeeks.org/convert-to-strictly-increasing-integer-array-with-minimum-changes/
