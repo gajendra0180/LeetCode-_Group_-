@@ -1458,3 +1458,45 @@ Date:20/12/2021
 Questions:
 
 Gajendra->https://leetcode.com/problems/decode-string/
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Solution:
+
+Gajendra:
+1) 
+class Solution {
+public:
+    string tmp(string s,int &i)
+    {
+        string res="";
+        if(i>=s.length())
+            return res;
+        while(i<s.length())
+        {
+            if(isalpha(s[i]))
+               res.push_back(s[i]);
+             else if(s[i]==']')
+               return res;
+              else if(isdigit(s[i]))
+               {
+                   string num="";
+                   while(isdigit(s[i]))
+                       num.push_back(s[i++]);
+                   stringstream ss;
+                   ss<<num;int n;ss>>n;
+                   string ans=tmp(s,++i);
+                   for(int j=0;j<n;j++)
+                       res+=ans;
+                  cout<<ans<< n <<res<<endl;
+               }
+               i++;
+        }
+        return res;
+    }
+    string decodeString(string s) {
+        int i=0;
+        return tmp(s,i);
+    }
+};
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
