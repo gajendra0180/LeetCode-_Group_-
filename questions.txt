@@ -1459,6 +1459,7 @@ Questions:
 
 Gajendra->https://leetcode.com/problems/decode-string/
 Ashish -> https://leetcode.com/problems/3sum-closest/description/
+Karan -> https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 Solution:
 
