@@ -1506,7 +1506,7 @@ Date : 21/12/2021
 Questions:
 
 Karan-> https://leetcode.com/problems/power-of-two/
-
+Gajendra -> https://leetcode.com/problems/merge-intervals/
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
