@@ -1637,6 +1637,28 @@ public:
     }
 };
 
+Solver : Gajendra
+Setter: Karan
+
+class Solution {
+public:
+    void reorderList(ListNode* head) {
+
+        if(head->next==NULL||head==NULL||head->next->next==NULL)
+            return;
+        
+        ListNode* temp=head;
+        while(temp->next->next!=NULL)
+                temp=temp->next;
+        ListNode* t=head->next;
+        head->next=temp->next;
+        temp->next->next=t;
+        temp->next=NULL;
+        
+        reorderList(head->next->next);
+    }
+};
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
