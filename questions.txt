@@ -1611,6 +1611,32 @@ public:
     }
 };
 
+Solver:Gajendra
+Setter:Ashish
+
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        map<string,vector<string>>m;
+        for(auto i:strs)
+        {
+            string s=i;
+            sort(s.begin(),s.end());
+            m[s].push_back(i);
+        }
+        vector<vector<string>>res;
+        for(auto i:m)
+        {
+            vector<string>temp;
+            for(auto j:i.second)
+                temp.push_back(j);
+            res.push_back(temp);
+        }
+        
+        return res;
+    }
+};
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
