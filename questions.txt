@@ -1613,3 +1613,41 @@ public:
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ASHISH's que :
+
+https://leetcode.com/problems/group-anagrams/submissions/
+
+
+SOLVER : ASHISH
+SETTER : ASHISH
+
+class Solution {
+public:
+  // map for storing value as arr of  strings which is anagrams of key 
+  map<string,vector<string>> str_store; 
+    
+//  here making  a function that takes string s in addition to str_store(defined above)
+//     it will make a copy of string s as t after that it will sort that then just map....
+void  checker(map<string,vector<string>> &str_store,string s){
+    string t = s;
+    sort(t.begin(),t.end());
+   str_store[t].push_back(s);  
+}
+       
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+//         iterating over all strings  and then  appling checker function (explained above)
+        for(auto x: strs){
+            checker(str_store,x);
+        }
+// now returning vector of vector  as answer
+        vector<vector<string>> ans;
+        for(auto x: str_store){
+            ans.push_back(x.second);
+        }
+        
+        
+        return ans;
+    }
+};
+
