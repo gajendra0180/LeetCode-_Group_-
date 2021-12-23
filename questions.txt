@@ -1707,3 +1707,45 @@ Date: 23/12/2021
 Questions: 
 Gajendra -> https://leetcode.com/problems/longest-palindromic-substring/
 
+-----------------------------------------------------------------------
+Solutions:
+Solver:Gajendra
+Setter:Gajendra
+
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        
+        int ans=0,l=0,r=0;
+        
+        for(int i=0;i<s.length();i++)
+        {
+            int left=i-1,right=i+1,res=1;
+            while(left>=0&&right<s.length()&&s[left]==s[right]){
+                res+=2;
+                left--;right++;
+            }if(res>ans)
+                l=left+1,r=right-1;   
+            ans=max(ans,res);
+        }
+        for(int i=0;i<s.length();i++)
+        {
+            int left=i-1,right=i,res=0;
+          
+            while(left>=0&&right<s.length()&&s[left]==s[right]){
+                res+=2;
+                left--;right++;
+            }
+           if(res>ans)
+                l=left+1,r=right-1;   
+            ans=max(ans,res);
+        }
+        
+        string rr;
+        for(int i=l;i<=r;i++)
+            rr.push_back(s[i]);
+        return rr;
+    }
+};
+
+-----------------------------------------------------------------------------
