@@ -1696,5 +1696,39 @@ public:
     }
 };
 
+Solver:Gajendra
+Setter:Karan
+class MinStack {
+public:
+    vector<pair<int,int>> v;
+    int minn=INT_MAX;
+    MinStack() {
+         cout<<minn<<endl;
+    }
+    
+    void push(int val) {
+        minn=min(minn,val);
+        v.push_back({val,minn});
+    }
+    
+    void pop() {
+        v.pop_back();
+        
+        if(v.size()==0)
+            minn=INT_MAX;
+        else
+            minn=v.back().second;
+    }
+    
+    int top() {
+        return v.back().first;
+    }
+    
+    int getMin() {
+        return v.back().second;
+        
+    }
+};
+	
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
