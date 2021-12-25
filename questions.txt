@@ -1781,6 +1781,7 @@ Questions:
 Gajendra -> https://leetcode.com/problems/course-schedule/
 Arpit -> https://leetcode.com/problems/regular-expression-matching/
 Gajendra -> https://leetcode.com/problems/find-eventual-safe-states/submissions/
+Karan -> https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 Solutions:
