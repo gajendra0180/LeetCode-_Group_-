@@ -1891,3 +1891,79 @@ public:
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Date: 26/12/2021
+
+Questions:
+Gajendra -> https://leetcode.com/problems/recover-the-original-array/
+
+--------------------------------------------------------------------------------------------------
+Solutions:
+
+Solver -> Gajendra
+Setter ->Gajendra
+
+class Solution {
+public:
+    vector<int> recoverArray(vector<int>& nums) {
+        vector<int> k;
+        sort(nums.begin(),nums.end());
+        int child=nums[0];
+        for(auto i:nums)
+        {
+            int x=i-child;
+            if(x%2==0&&x!=0)
+            k.push_back(x/2);
+        }
+        int res=0;
+        for(auto kk:k)
+        {
+          unordered_map<int,int> m;
+            for(auto i:nums)
+                m[i]++;
+            for(auto i:nums)
+            {
+                if(m.find(i)!=m.end())
+                m[i]--;
+                else
+                continue;
+               
+                if(m.find(i+2*kk)!=m.end())
+                    m[i+2*kk]--;
+                else
+                    break;
+               if(m[i]==0)m.erase(i);
+                if(m[i+2*kk]==0)
+                    m.erase(i+2*kk);
+            }
+            if(m.size()==0)
+            {
+             res=kk;break;
+            }
+        }
+        vector<int>result;
+         unordered_map<int,int> m;
+            for(auto i:nums)
+                m[i]++;
+             for(auto i:nums)
+            {
+             if(m.find(i)!=m.end())
+             {m[i]--;result.push_back(i+res);}
+                else
+                continue;
+                if(m[i]==0)m.erase(i);
+                if(m.find(i+2*res)!=m.end())
+                    m[i+2*res]--;
+                else
+                    continue;
+                if(m[i+2*res]==0)
+                    m.erase(i+2*res);
+            }
+        return result;
+    }
+};
+
+
+----------------------------------------------------------------------------------------------------
+
