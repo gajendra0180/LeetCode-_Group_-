@@ -1965,6 +1965,33 @@ public:
     }
 };
 
+Solver -> Gajendra
+Setter -> Karan
+
+class Solution {
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        map<int,vector<vector<int>>> m;
+        for(auto i:points)
+        {
+            int x=i[0],y=i[1];
+            int gp=x*x+y*y;
+            m[gp].push_back({x,y});
+        }
+        vector<vector<int>> res;
+        for(auto i:m)
+        {
+            for(auto j:i.second)
+            {
+                k--;res.push_back({j[0],j[1]});
+            }
+            if(k==0)
+                break;
+        }
+        return res;
+    }
+};
+
 
 ----------------------------------------------------------------------------------------------------
 
