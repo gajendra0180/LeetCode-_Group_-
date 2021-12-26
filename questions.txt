@@ -1897,6 +1897,7 @@ Date: 26/12/2021
 
 Questions:
 Gajendra -> https://leetcode.com/problems/recover-the-original-array/
+Karan -> https://leetcode.com/problems/k-closest-points-to-origin/
 
 --------------------------------------------------------------------------------------------------
 Solutions:
