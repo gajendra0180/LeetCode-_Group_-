@@ -2040,3 +2040,96 @@ public:
 
 
 ------------------------------------------------------------------------
+
+
+
+Today's question by ashish
+https://leetcode.com/problems/surrounded-regions/submissions/
+
+
+
+
+Soln for ashish que by ashish 
+
+
+
+class Solution {
+public:
+    
+  
+void deadCatcher(int i , int j , vector<vector<char>> &board, set<vector<int>> &dead, set<vector<int>> &visited){
+        
+int row = board.size();
+    
+int col = board[0].size();
+    
+    
+//     just a dfs to reach connected zero's position
+    if(i>=row || i<0 || j>=col || j<0 || board[i][j]=='X'){return;}
+    
+    if(visited.find({i,j})!=visited.end()){return;}
+    dead.insert({i,j});
+    visited.insert({i,j});
+    deadCatcher(i+1,j,board,dead,visited);
+    deadCatcher(i-1,j,board,dead,visited);
+    deadCatcher(i,j+1,board,dead,visited);
+    deadCatcher(i,j-1,board,dead,visited);
+  
+        
+        
+    }
+    
+    void solve(vector<vector<char>>& board) {
+        
+//         hey hello ashish is here 
+//         so direct soln is to  carry all zeroes which is on border or connected to any border zero whether through right, left, up, down direction so after carry all that zeroes's positions in suitable data-struct we have to just
+//         iterate on all zeroes's position of given board and make that equal to 'X' only if that zero's postion  is not in that data-struct (in this soln i have used set of vector)
+        
+
+        
+        
+        
+        
+//         now i will be contuing with finding all that zeroes that are on border or...... for that purpose i will use dfs so visited set is for tell whether i am repeating or not 
+//          see more in dfs fucntion named as deadCatcher 
+        set<vector<int>> dead;
+        set<vector<int>> visited;
+        int row = board.size();
+    int col = board[0].size();
+        
+        
+        
+        
+//          begining dfs call to that position only which is already on border so that using dfs we can get all postiion which is connected to that
+        for(int i =0; i<board.size(); i++){
+            
+            for(int j =0; j<board[0].size(); j++){
+                if(board[i][j]=='O' && (i==0 || i==row-1 || j==0 || j==col-1)){
+                    deadCatcher(i,j,board,dead,visited);
+                }
+            }
+            
+            
+        }
+        
+        
+        
+//         after finding all zeroes'position which is connected to border zero we can apply our second step to flip that zero's position which is not in that set which is named as dead set
+        
+        
+                for(int i =0; i<board.size(); i++){
+            
+            for(int j =0; j<board[0].size(); j++){
+                if(board[i][j]=='O' && (dead.find({i,j})==dead.end())){
+                    board[i][j] = 'X';
+                }
+            }
+            
+            
+        }
+        
+      
+        
+        
+    }
+};
