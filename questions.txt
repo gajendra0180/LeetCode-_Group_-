@@ -2135,3 +2135,16 @@ int col = board[0].size();
         
     }
 };
+
+
+--------------------------------------------------------
+
+
+
+
+1
+Date: 29/12/2021
+
+Questions:
+Gajendra->https://leetcode.com/problems/3sum/
+
