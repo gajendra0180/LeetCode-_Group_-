@@ -2220,7 +2220,7 @@ public:
 
 
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Date: 30/12/2021
@@ -2228,7 +2228,7 @@ Questions:
 Gajendra -> https://leetcode.com/problems/interval-list-intersections/
 Karan -> https://leetcode.com/problems/smallest-integer-divisible-by-k/
 Arpit-> https://leetcode.com/problems/coin-change-2/
------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 solver-Arpit
 setter-Arpit
 class Solution {
@@ -2271,3 +2271,31 @@ public:
         return -1;
     }
 };
+
+solver-Arpit
+setter-Gajendra
+class Solution {
+public:
+    vector<vector<int>> intervalIntersection(vector<vector<int>>& first, vector<vector<int>>& second) {
+         int i=0,j=0;
+        vector<vector<int>>ans;
+        while(i<first.size() && j<second.size()){
+            vector<int>v;
+           v.push_back(max(first[i][0],second[j][0]));
+           v.push_back(min(first[i][1],second[j][1]));
+           if(v[0]<=v[1])
+           ans.push_back(v);
+           if(first[i][1]<second[j][1]){
+               i++;
+           }
+            else if(first[i][1]==second[j][1]){
+                i++; j++;
+            }
+            else{
+                j++;
+            }
+        }
+        return ans;
+    }
+};
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
