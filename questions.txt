@@ -2299,3 +2299,99 @@ public:
     }
 };
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+SOLVER : ASHISH
+GIVER: GAJENDRA
+
+SOLN:
+class Solution {
+public:
+    vector<vector<int>> intervalIntersection(vector<vector<int>>& f, vector<vector<int>>& s) {
+//         leaving points of a
+        set<int> a_leaving_points;
+        set<int> b_leaving_points;
+        
+        set<int> store;
+        for(auto x:f){
+            store.insert(x[0]);
+            store.insert(x[1]);
+            a_leaving_points.insert(x[1]);
+        }
+        
+       
+         for(auto x:s){
+            store.insert(x[0]);
+            store.insert(x[1]);
+            b_leaving_points.insert(x[1]);
+        }
+    map<int,vector<int>> mapping;
+     for(auto x: store){
+         mapping[x] = {0,0};
+     }
+    for(auto x:f){
+mapping[x[0]][0]++;
+mapping[x[1]][0]--;
+    }
+        
+        
+        for(auto x:s){
+mapping[x[0]][1]++;
+mapping[x[1]][1]--;
+    }    
+        
+
+        int pre1 = 0;
+        int pre2 = 0;
+        for(auto x: mapping){
+            int t = x.first;
+            vector<int> v = x.second;
+            v[0]+=pre1;
+            pre1 = v[0];
+            v[1]+=pre2;
+            pre2 = v[1];
+            mapping[t] = v;
+            
+        }
+    
+        
+     vector<vector<int>> ans;
+        int process = -1;
+        for(auto x: mapping){
+            vector<int> v = x.second;
+            if(v[0]+v[1]==2){
+                process = x.first;
+                continue;
+            }
+            
+            
+            int a = v[0];
+            int b = v[1];
+            if(a_leaving_points.count(x.first)){
+                a++;
+            }
+            if(b_leaving_points.count(x.first)){
+                b++;
+            }
+            if(a+b==2){
+                if(process!=-1){
+                    ans.push_back({process,x.first});
+                    process = -1;
+                }
+                else{
+                    ans.push_back({x.first,x.first});
+                }
+            }
+            
+            
+            
+        }
+        
+        
+      return ans;  
+        
+        
+    }
+};
