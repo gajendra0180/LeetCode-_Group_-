@@ -2227,4 +2227,47 @@ Date: 30/12/2021
 Questions:
 Gajendra -> https://leetcode.com/problems/interval-list-intersections/
 Karan -> https://leetcode.com/problems/smallest-integer-divisible-by-k/
+Arpit-> https://leetcode.com/problems/coin-change-2/
+-----------------------------------------------------------------------------------
+solver-Arpit
+setter-Arpit
+class Solution {
+public:
+    int dp[301][5001];
+    int helper(vector<int>&coins,int amount,int n){
+        if(n==0 || amount==0){
+            return amount==0?1:0;
+        }
+        if(dp[n][amount]!=-1){
+            return dp[n][amount];
+        }
+        if(coins[n-1]<=amount){
+            return dp[n][amount]=(helper(coins,amount-coins[n-1],n)+helper(coins,amount,n-1));
+        }
+            return dp[n][amount]=helper(coins,amount,n-1);
+    }
+    int change(int amount, vector<int>& coins) {
+        memset(dp,-1,sizeof(dp));
+       int res=helper(coins,amount,coins.size());
+        return  res;
+    }
+};
 
+solver-Arpit
+setter-Karan
+class Solution {
+public:
+    int smallestRepunitDivByK(int k) {
+        if(k%2==0 || k%5==0){
+            return -1;
+        }
+        int rem=0;
+      for(int i=1;i<=k;i++){
+          rem=((rem*10)+1)%k;
+          if(rem%k==0){
+              return i;
+          }
+      }
+        return -1;
+    }
+};
