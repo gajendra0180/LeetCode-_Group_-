@@ -2195,5 +2195,29 @@ public:
     }
 };
 
+Solver:Gajendra
+Setter:Karan
+class FindElements {
+public:
+
+    map<int,bool>m;
+    void traverse(int x,TreeNode* &root)
+    {
+        if(root==NULL)return;
+        root->val=x;
+        m[x]=true;
+        traverse(2*x+1,root->left);
+        traverse(2*x+2,root->right);
+    }
+    FindElements(TreeNode* root) {
+        traverse(0,root);
+    }
+    
+    bool find(int target) {
+        return m[target];
+    }
+};
+
+
 
 --------------------------------------------------------------------------------
