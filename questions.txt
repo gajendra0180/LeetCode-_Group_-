@@ -2226,4 +2226,5 @@ public:
 Date: 30/12/2021
 Questions:
 Gajendra -> https://leetcode.com/problems/interval-list-intersections/
+Karan -> https://leetcode.com/problems/smallest-integer-divisible-by-k/
 
