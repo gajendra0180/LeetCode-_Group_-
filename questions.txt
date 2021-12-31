@@ -2413,10 +2413,13 @@ mapping[x[1]][1]--;
 };
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+Date:31/12/2021
 Questions:
-
 Karan -> https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
+
+---------------------------------------------------------------------------------------
+Solutions:
+
 solver-Arpit
 setter->Karan
 class Solution {
@@ -2430,3 +2433,22 @@ public:
         return max(maxAncestorDiff(root->left,mn,mx),maxAncestorDiff(root->right,mn,mx));
     }
 };
+
+Solver:Gajendra
+Setter:Karan
+class Solution {
+public:
+    int calc(TreeNode* r,int maxx,int minn)
+    {
+        if(r==NULL)return maxx-minn;
+        maxx=max(maxx,r->val);
+        minn=min(minn,r->val);
+        
+        return max(calc(r->left,maxx,minn),calc(r->right,maxx,minn));
+    }
+    
+    int maxAncestorDiff(TreeNode* root) {
+    return calc(root,INT_MIN,INT_MAX);
+}
+};
+---------------------------------------------------------------------------------------------
