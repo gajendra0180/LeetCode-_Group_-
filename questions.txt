@@ -2416,7 +2416,7 @@ mapping[x[1]][1]--;
 Date:31/12/2021
 Questions:
 Karan -> https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
-
+Gajendra -> https://leetcode.com/problems/backspace-string-compare/
 ---------------------------------------------------------------------------------------
 Solutions:
 
