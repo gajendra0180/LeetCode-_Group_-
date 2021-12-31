@@ -2298,6 +2298,31 @@ public:
         return ans;
     }
 };
+
+Solver: Gajendra
+Setter: Karan
+class Solution {
+public:
+    int smallestRepunitDivByK(int k) {
+        if(k%2==0 || k%5==0)
+            return -1;
+        
+        int len=1;
+        int num=1;
+        while(num%k!=0)
+        {
+            len++;
+            num=(num%k)*10+1;
+        }
+        return len;
+    }
+};
+
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
