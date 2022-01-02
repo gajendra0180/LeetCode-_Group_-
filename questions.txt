@@ -2505,9 +2505,7 @@ Date : 02/01/2022
 Questions:
 
 Gajendra ->https://leetcode.com/problems/subarray-sum-equals-k/submissions/
-
-ASHISH-
-https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/submissions/
+ASHISH-https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/submissions/
 ----------------------------------------------------------------------------------
 Solutions:
 
@@ -2529,7 +2527,27 @@ public:
         return res;
     }
 };
+Solver:Gajendra
+Setter:Ashish
 
+class Solution {
+public:
+    int numPairsDivisibleBy60(vector<int>& time) {
+        map<int,int>m;
+        int res=0;
+        for(auto i:time)
+        {
+            
+            int req=(60-(i%60))%60;
+            
+            if(m.find(req)!=m.end())
+                res+=m[req];
+            
+            m[i%60]++;
+        }
+        return res;
+    }
+};
 
 
 
