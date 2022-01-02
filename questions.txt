@@ -2493,9 +2493,42 @@ public:
 };
 
 
-
-
-
-
 From ASHISH 
 https://leetcode.com/problems/burst-balloons/submissions/
+
+
+
+
+-
+Date : 02/01/2022
+
+Questions:
+
+Gajendra ->https://leetcode.com/problems/subarray-sum-equals-k/submissions/
+
+----------------------------------------------------------------------------------
+Solutions:
+
+Solver:Gajendra
+Setter:Gajendra
+ class Solution {
+public:
+    int subarraySum(vector<int>& v, int k) {
+       map<int,int> m;
+        m[0]=1;
+        int s=0,res=0;
+        for(auto i:v)
+        {
+            s+=i;
+            if(m.find(s-k)!=m.end())
+                res+=m[s-k];
+            m[s]++;
+        }
+        return res;
+    }
+};
+
+
+
+
+-------------------------------------------------------------------------------------------
