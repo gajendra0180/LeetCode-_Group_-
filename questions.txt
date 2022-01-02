@@ -2506,6 +2506,8 @@ Questions:
 
 Gajendra ->https://leetcode.com/problems/subarray-sum-equals-k/submissions/
 
+ASHISH-
+https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/submissions/
 ----------------------------------------------------------------------------------
 Solutions:
 
@@ -2532,3 +2534,32 @@ public:
 
 
 -------------------------------------------------------------------------------------------
+
+
+SETTER: ASHISH 
+SOLVER: ASHISH
+
+class Solution {
+public:
+    int numPairsDivisibleBy60(vector<int>& time) {
+        vector<int> rem;
+        for(auto x: time){
+            rem.push_back(x%60);  
+        }
+        multiset<int>counter;
+        int ans = 0;
+        for(auto x: rem){
+            if(x==0){
+                ans+=(counter.count(0));
+                counter.insert(x);
+                continue;
+            }
+            ans+=(counter.count(abs(60-x)));
+            counter.insert(x);
+            
+            
+        }
+       return ans; 
+        
+    }
+};
