@@ -2506,6 +2506,7 @@ Questions:
 
 Gajendra ->https://leetcode.com/problems/subarray-sum-equals-k/submissions/
 ASHISH-https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/submissions/
+Karan -> https://leetcode.com/problems/first-unique-character-in-a-string/submissions/
 ----------------------------------------------------------------------------------
 Solutions:
 
