@@ -2591,3 +2591,55 @@ Date: 03/01/2022
 Questions: 
 
 Karan -> https://leetcode.com/problems/find-the-town-judge/
+
+ASHISH:
+https://leetcode.com/problems/find-the-town-judge/submissions/
+
+
+
+
+
+SETTER ASHISH:
+SOLVER:ASHISH
+
+-- TOWN'S JUDGE 
+
+class Solution {
+public:
+    int findJudge(int n, vector<vector<int>>& trust) {
+         if(n==1){return 1;}
+        if(trust.size()==0){return -1;}
+        
+        
+//        here dp -> two cols
+//                -> n rows
+//         first col of any row => tells ith's frequency of given trust
+//          second col of any row=> tells ith's freq of taken trust
+        
+// SO AFTER FILLING MY DP arrays just find num of ith for which first col -> 0 and second col-> n-1
+//         if such ith is more than one return -1
+//         else return that ith
+        //---  EDGE CASE IF n == 1 return 1
+        
+        vector<vector<int>> dp(n+1,{0,0});
+        for(auto x: trust){
+            dp[x[0]][0]++;
+            dp[x[1]][1]++;
+        }
+        
+        set<int> ans;
+        int count = 1;
+        for(int i = 1; i<=n; i++){
+            vector<int> x = dp[i];
+            if(x[0]==0 && x[1]==n-1){
+                ans.insert(count);
+            }
+            count++;
+        }
+        
+        if(ans.size()==1){return *ans.begin();}
+        
+        return -1;
+        
+    }
+};
