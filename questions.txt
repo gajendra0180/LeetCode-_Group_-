@@ -2591,3 +2591,12 @@ Date: 03/01/2022
 Questions: 
 
 Karan -> https://leetcode.com/problems/find-the-town-judge/
+
+---------------------------------------------------------------------------------------------
+
+
+Date: 04/01/2022
+
+Questions: 
+
+Karan -> https://leetcode.com/problems/complement-of-base-10-integer/
