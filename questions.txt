@@ -2592,6 +2592,7 @@ Questions:
 
 Karan -> https://leetcode.com/problems/find-the-town-judge/
 
+<<<<<<< HEAD
 ASHISH:
 https://leetcode.com/problems/find-the-town-judge/submissions/
 
@@ -2640,6 +2641,37 @@ public:
         if(ans.size()==1){return *ans.begin();}
         
         return -1;
+        
+    }
+};
+=======
+---------------------------------------------------------------------------------------------
+
+
+Date: 04/01/2022
+
+Questions: 
+
+Karan -> https://leetcode.com/problems/complement-of-base-10-integer/
+>>>>>>> cee71f6c8cced676092b544b8c17ce55368dccd8
+
+
+
+Setter Karan
+Solver Ashish
+
+
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+      int x = 1;
+        int count = 2;
+        while(n>x){
+            x = ((1<<count)-1);
+            count++;
+        }
+        
+        return x^n;
         
     }
 };
