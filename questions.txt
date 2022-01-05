@@ -2675,3 +2675,52 @@ public:
         
     }
 };
+
+
+
+Solver -> Gajendra
+Setter -> Karan
+
+function decimalToBinary(num)
+{
+    var res="";
+    while(num>0)
+    {
+        // console.log(num)
+        var a=num%2
+        num=Math.floor(num/2);
+        if(a==1)
+            res=res+"0"
+        else
+            res=res+"1"
+    }
+    
+    return res;
+}
+var bitwiseComplement = function(n) {
+    if(n==0)
+        return 1
+    var binary=decimalToBinary(n);
+    var res=[...binary].reverse().join("");
+    // console.log(res)
+    var len=res.length-1
+    var num=0
+    // console.log(res.length)
+    for(var a=0;a<res.length;a++)
+    {
+        // console.log("Tihs")
+        if(res[a]=='1')
+         num+=2**len
+        len--
+    }
+    return num
+    
+};
+
+---------------------------------------------------------------------------
+
+
+
+Date : 05/01/2022
+
+Questions:
