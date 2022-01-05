@@ -2675,3 +2675,12 @@ public:
         
     }
 };
+
+---------------------------------------------------------------------------------------------
+
+
+Date: 05/01/2022
+
+Questions: 
+
+Karan -> https://leetcode.com/problems/palindrome-partitioning/
