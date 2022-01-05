@@ -2725,3 +2725,99 @@ Date: 05/01/2022
 Questions: 
 
 Karan -> https://leetcode.com/problems/palindrome-partitioning/
+
+
+
+
+
+SETTER: KARAN 
+SOLVER: ASHISH
+
+
+class Solution {
+public:
+    
+    
+    
+//     just a recursion which takes all valid substring as per questions 
+    void solver(vector<vector<bool>> &dp, int i , string s , vector<vector<pair<int,int>>> &ans, vector<pair<int,int>> temp){
+        
+        
+        if(i==s.length()){
+            ans.push_back(temp);
+        }
+        
+        for(int t = 0; t<s.length()-i; t++){
+            
+            if(dp[i][i+t]){
+                temp.push_back({i,i+t});
+                solver(dp,i+t+1,s,ans,temp);
+                temp.pop_back();
+            }
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    vector<vector<string>> partition(string s) {
+        vector<bool> f(s.length(),true);
+        vector<vector<bool>> dp(s.length(),f);
+        
+//         dp vector takes i,j and tells whether s[i,....j] is palindrome or not
+     for(int i = s.length()-1; i>=0; i--){
+         
+         for(int j = s.length(); j>=0; j--){
+             
+             if(i<j){
+                 if(s[i]==s[j]){
+                     
+                     dp[i][j] = dp[i+1][j-1];
+                     
+                 }
+                     
+                 else{
+                     dp[i][j] = false;
+                 }
+             }
+             
+             
+             
+         }
+         
+     }   
+        
+        
+        
+ vector<vector<string>> final;
+        
+      vector<vector<pair<int,int>>> ans;
+        vector<pair<int,int>> temp;
+        
+        solver(dp,0,s,ans,temp);
+        
+        
+        for(auto x: ans){
+              vector<string> kk;
+            for(auto y: x){
+                string f = "";
+                for(int a = y.first; a<=y.second; a++){
+                    f+=s[a];
+                }
+                kk.push_back(f);
+                
+                
+            }
+            final.push_back(kk);
+            
+        }
+        
+        
+return final;
+ 
+        
+    }
+};
