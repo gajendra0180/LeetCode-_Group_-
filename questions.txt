@@ -2676,6 +2676,7 @@ public:
     }
 };
 
+<<<<<<< HEAD
 
 
 Solver -> Gajendra
@@ -2724,3 +2725,13 @@ var bitwiseComplement = function(n) {
 Date : 05/01/2022
 
 Questions:
+=======
+---------------------------------------------------------------------------------------------
+
+
+Date: 05/01/2022
+
+Questions: 
+
+Karan -> https://leetcode.com/problems/palindrome-partitioning/
+>>>>>>> 4252f0748a5239ba64efa5c617c09a785ebdc9a2
