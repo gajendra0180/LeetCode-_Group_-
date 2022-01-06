@@ -2725,3 +2725,12 @@ Date: 05/01/2022
 Questions: 
 
 Karan -> https://leetcode.com/problems/palindrome-partitioning/
+
+
+--------------------------------------------------------------------------
+
+Date: 06/01/2022
+
+Questions:
+
+Gajendra -> https://leetcode.com/problems/car-pooling/
