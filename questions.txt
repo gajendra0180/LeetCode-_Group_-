@@ -2734,3 +2734,4 @@ Date: 06/01/2022
 Questions:
 
 Gajendra -> https://leetcode.com/problems/car-pooling/
+Karan -> https://leetcode.com/problems/ransom-note/
