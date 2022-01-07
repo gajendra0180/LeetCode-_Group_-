@@ -2656,6 +2656,23 @@ Karan -> https://leetcode.com/problems/complement-of-base-10-integer/
 >>>>>>> cee71f6c8cced676092b544b8c17ce55368dccd8
 
 
+Setter Karan
+Solver Arpit
+
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+        if(n==0) return 1;
+     int k=0;
+     int bits=log2(n)+1;
+     while(bits>0){
+         n^=1<<k;
+         k++;
+         bits--;
+     }
+    return n;
+    }
+};
 
 Setter Karan
 Solver Ashish
