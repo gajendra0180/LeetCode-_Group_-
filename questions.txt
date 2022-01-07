@@ -2726,6 +2726,37 @@ Questions:
 
 Karan -> https://leetcode.com/problems/palindrome-partitioning/
 
+Solver -> Arpit
+Setter ->Karan
+class Solution {
+public:
+    vector<vector<string>>res;
+    bool ispalindrome(string &s,int i,int j){
+        while(i<=j){
+            if(s[i]!=s[j]) return false;
+            i++; j--;
+        }
+        return true;
+    }
+    void helper(string &s,int i, vector<string>&v){
+          if(i==s.length()){
+              res.push_back(v);
+              return;
+          }
+        for(int k=i;k<s.length();k++){
+        if(ispalindrome(s,i,k)){
+            v.push_back(s.substr(i,k-i+1));
+            helper(s,k+1,v);
+            v.pop_back();
+        }
+        }
+    }
+    vector<vector<string>> partition(string s) {
+        vector<string>v; 
+        helper(s,0,v);
+        return res;
+    }
+};
 
 --------------------------------------------------------------------------
 
@@ -2739,7 +2770,24 @@ Karan -> https://leetcode.com/problems/ransom-note/
 
 ---------------------------------------------
 Solutions:
-
+-----------------------------------------------------------
+Solver -> Arpit
+Setter ->Karan
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        vector<int>v(26,0);
+       for(int i=0;i<magazine.length();i++){
+           v[magazine[i]-'a']++;
+       } 
+        for(int i=0;i<ransomNote.length();i++){
+           v[ransomNote[i]-'a']--;
+           if(v[ransomNote[i]-'a']<0) return false;
+       }
+        return true;
+    }
+};
+-----------------------------------------------------------
 Solver -> Gajendra
 Setter ->Gajendra
 
