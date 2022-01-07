@@ -2838,4 +2838,5 @@ public:
 
 Questions:
 Gajendra -> https://leetcode.com/problems/perfect-squares/
+Karan -> https://leetcode.com/problems/linked-list-random-node/
 
