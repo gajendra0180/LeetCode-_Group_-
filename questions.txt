@@ -2656,6 +2656,23 @@ Karan -> https://leetcode.com/problems/complement-of-base-10-integer/
 >>>>>>> cee71f6c8cced676092b544b8c17ce55368dccd8
 
 
+Setter Karan
+Solver Arpit
+
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+        if(n==0) return 1;
+     int k=0;
+     int bits=log2(n)+1;
+     while(bits>0){
+         n^=1<<k;
+         k++;
+         bits--;
+     }
+    return n;
+    }
+};
 
 Setter Karan
 Solver Ashish
@@ -2726,6 +2743,7 @@ Questions:
 
 Karan -> https://leetcode.com/problems/palindrome-partitioning/
 
+<<<<<<< HEAD
 
 
 
@@ -2818,6 +2836,253 @@ public:
         
 return final;
  
+        
+    }
+};
+=======
+Solver -> Arpit
+Setter ->Karan
+class Solution {
+public:
+    vector<vector<string>>res;
+    bool ispalindrome(string &s,int i,int j){
+        while(i<=j){
+            if(s[i]!=s[j]) return false;
+            i++; j--;
+        }
+        return true;
+    }
+    void helper(string &s,int i, vector<string>&v){
+          if(i==s.length()){
+              res.push_back(v);
+              return;
+          }
+        for(int k=i;k<s.length();k++){
+        if(ispalindrome(s,i,k)){
+            v.push_back(s.substr(i,k-i+1));
+            helper(s,k+1,v);
+            v.pop_back();
+        }
+        }
+    }
+    vector<vector<string>> partition(string s) {
+        vector<string>v; 
+        helper(s,0,v);
+        return res;
+    }
+};
+
+--------------------------------------------------------------------------
+
+Date: 06/01/2022
+
+Questions:
+
+Gajendra -> https://leetcode.com/problems/minimum-path-sum/submissions/
+Karan -> https://leetcode.com/problems/ransom-note/
+
+
+---------------------------------------------
+Solutions:
+-----------------------------------------------------------
+Solver -> Arpit
+Setter ->Karan
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        vector<int>v(26,0);
+       for(int i=0;i<magazine.length();i++){
+           v[magazine[i]-'a']++;
+       } 
+        for(int i=0;i<ransomNote.length();i++){
+           v[ransomNote[i]-'a']--;
+           if(v[ransomNote[i]-'a']<0) return false;
+       }
+        return true;
+    }
+};
+-----------------------------------------------------------
+Solver -> Gajendra
+Setter ->Gajendra
+
+class Solution
+{
+public:
+         map<pair<int,int>,int> m;
+    int minSum(int i, int j, vector<vector<int>> &grid)
+    {
+   
+        if(i==grid.size()-1&&j==grid[0].size())
+            return 0;
+        if (i == grid.size() || j == grid[0].size())
+            return 40000*2;
+        
+        if(m.find({i,j})!=m.end())
+            return m[{i,j}];
+        
+        return m[{i,j}]=min(grid[i][j] + minSum(i, j + 1, grid), grid[i][j] + minSum(i + 1, j, grid));
+    }
+    int minPathSum(vector<vector<int>> &grid){
+        return minSum(0, 0, grid);
+        }
+};
+
+
+--------------------------------------------------------------
+
+
+07/01/2022
+
+Questions:
+Gajendra -> https://leetcode.com/problems/perfect-squares/
+Karan -> https://leetcode.com/problems/linked-list-random-node/
+
+solver->Arpit
+setter->Karan
+
+class Solution {
+public:
+       ListNode* head;   
+    Solution(ListNode* head) {
+       this->head=head;
+    }
+    
+    int getRandom() {
+        ListNode* t=head;
+        int res=t->val;
+        t=t->next;
+        for(int i=1;t!=NULL;i++){
+            if(rand()%(i+1)==0){
+                res=t->val;
+            }
+            t=t->next;
+        }
+        return res;
+    }
+};
+
+Solver-> Gajendra
+Setter ->Gajendra
+
+class Solution {
+public:
+    int t[100][10001];
+     vector<int> choices;
+    int minn(int n,int s) {
+        if(s==0)
+            return 0;
+        
+        if(n==0||s<0)
+            return 1e9;
+        
+        if(t[n][s]!=-1)
+            return t[n][s];
+        
+        return  t[n][s] = min(1+minn(n,s-choices[n]),minn(n-1,s)); 
+    }
+    
+    int numSquares(int n) {
+        
+        for(int i=0;i*i<=n;i++)
+            for(int j=0;j<=n;j++)
+               t[i][j]=-1;
+   
+        for(int i=0;i*i<=n;i++)
+            choices.push_back(i*i);
+        
+        return minn(choices.size()-1,n);
+    }
+};
+
+-----------------------------------------------------------------
+Questions:
+Arpit-> https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+>>>>>>> daa557ad8a5b1b4eec3e43cf86331b6c2deaba68
+
+
+
+
+Questions from ashish
+
+https://leetcode.com/problems/cherry-pickup-ii/submissions/
+
+
+
+SETTER : ASHISH
+SOLVER:ASHISH
+
+
+class Solution {
+public:
+    
+    int store(vector<vector<int>> &grid, int i, int j, int k, vector<vector<vector<int>>> &vvv){
+        
+        if(i==grid.size()){
+            return 0;
+        }
+        
+        if(j==k){return 0;}
+        if(j<0 || k<0 || j>=grid[0].size() || k>=grid[0].size()){
+            return 0;
+        }
+        
+        
+        
+        
+//         lr lc ll
+//         rr rc rl
+//         cc cl cr
+if(vvv[i][j][k]!=-1){
+   
+    return vvv[i][j][k];
+}
+int pre = grid[i][j]+grid[i][k];
+
+
+int x = store(grid,i+1,j-1,k-1,vvv);
+int y = store(grid,i+1,j-1,k,vvv);
+int z = store(grid,i+1,j-1,k+1,vvv);
+
+int a = store(grid,i+1,j,k-1,vvv);
+int b = store(grid,i+1,j,k,vvv);
+int c = store(grid,i+1,j,k+1,vvv);
+
+int d = store(grid,i+1,j+1,k-1,vvv);
+int e = store(grid,i+1,j+1,k,vvv);
+int f = store(grid,i+1,j+1,k+1,vvv);
+x = max(x,y);
+x = max(x,z);
+x = max(x,a);
+x = max(x,b);
+x = max(x,c);
+x = max(x,d);
+x = max(x,e);
+x = max(x,f);
+        
+        
+int final =  x+pre;
+vvv[i][j][k] = final;
+        return final;
+        
+        
+        
+    
+        }
+    
+
+    int cherryPickup(vector<vector<int>>& grid) {
+        
+        
+            vector<int> v(80,-1);
+    vector<vector<int>> vv(80,v);
+    vector<vector<vector<int>>> vvv(80,vv);
+        
+        return store(grid,0,0,grid[0].size()-1,vvv);
+        
+        
+        
+        
+        
         
     }
 };
