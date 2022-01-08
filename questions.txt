@@ -2863,6 +2863,40 @@ public:
         return res;
     }
 };
+
+Solver-> Gajendra
+Setter ->Gajendra
+
+class Solution {
+public:
+    int t[100][10001];
+     vector<int> choices;
+    int minn(int n,int s) {
+        if(s==0)
+            return 0;
+        
+        if(n==0||s<0)
+            return 1e9;
+        
+        if(t[n][s]!=-1)
+            return t[n][s];
+        
+        return  t[n][s] = min(1+minn(n,s-choices[n]),minn(n-1,s)); 
+    }
+    
+    int numSquares(int n) {
+        
+        for(int i=0;i*i<=n;i++)
+            for(int j=0;j<=n;j++)
+               t[i][j]=-1;
+   
+        for(int i=0;i*i<=n;i++)
+            choices.push_back(i*i);
+        
+        return minn(choices.size()-1,n);
+    }
+};
+
 -----------------------------------------------------------------
 Questions:
 Arpit-> https://leetcode.com/problems/remove-duplicates-from-sorted-array/
