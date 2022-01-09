@@ -3086,3 +3086,12 @@ vvv[i][j][k] = final;
         
     }
 };
+
+
+
+-----------------------------------------------------------
+
+Date:09/01/2022
+
+Questions:
+Gajendra -> https://leetcode.com/problems/ones-and-zeroes/
