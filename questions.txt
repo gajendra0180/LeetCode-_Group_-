@@ -3095,3 +3095,56 @@ Date:09/01/2022
 
 Questions:
 Gajendra -> https://leetcode.com/problems/ones-and-zeroes/
+
+
+
+
+----------------------------------------------
+Solutions:
+
+Solver ->Gajendra
+Setter ->Gajendra
+
+class Solution {
+public:
+    int dp[101][101][601];
+    int maxx(vector<string>&s,int m,int n,int i,map<int,pair<int,int>>&freq)
+    {
+        if(i==s.size())
+            return 0;
+        
+        if(dp[m][n][i]!=-1)
+            return dp[m][n][i];
+        
+        int ans1=0,ans2=0;
+        ans2=maxx(s,m,n,i+1,freq);
+        m=m-freq[i].first;n=n-freq[i].second;
+        if(m>=0&&n>=0)
+            ans1=1+maxx(s,m,n,i+1,freq);
+        
+        return dp[m+freq[i].first][n+freq[i].second][i] = max(ans1,ans2);
+    }
+    
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        map<int,pair<int,int>> freq;//index , count(0,1)
+        for(int i=0;i<=m;i++)
+            for(int j=0;j<=n;j++)
+                for(int k=0;k<strs.size();k++)
+                    dp[i][j][k]=-1;
+        for(int i=0;i<strs.size();i++)
+        {
+            int o=0,z=0;
+            for(auto j:strs[i])
+            {
+                if(j=='1')
+                    o++;
+                else
+                    z++;
+            }
+            freq[i]={z,o};
+        }
+            return maxx(strs,m,n,0,freq);    
+    }
+};
+
+--------------------------------------------
