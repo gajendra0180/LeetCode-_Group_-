@@ -3096,10 +3096,7 @@ Date:09/01/2022
 Questions:
 Gajendra -> https://leetcode.com/problems/ones-and-zeroes/
 Arpit-> https://leetcode.com/problems/sudoku-solver/
-https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/
-
-
-
+        https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/
 
 ----------------------------------------------
 Solutions:
@@ -3193,6 +3190,11 @@ public:
     }
 };
 --------------------------------------------
+
+Date: 10/01/2022
+Questions: 
+
+Gajendra -> https://leetcode.com/problems/minimum-falling-path-sum/
 
 
 FROM ASHISH
