@@ -3195,6 +3195,7 @@ Date: 10/01/2022
 Questions: 
 
 Gajendra -> https://leetcode.com/problems/minimum-falling-path-sum/
+Karan -> https://leetcode.com/problems/add-binary/
 
 
 FROM ASHISH
