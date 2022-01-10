@@ -3193,3 +3193,89 @@ public:
     }
 };
 --------------------------------------------
+
+
+FROM ASHISH
+https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/
+
+
+solution by ashish
+
+#define ll int
+#define vec(type,name) vector<type> name;
+#define rep(a,b,c) for(ll i = a; i<b; i+=c)
+
+class Solution {
+public:
+    int largestRectangleArea(vector<int>&v) {
+        ll n = v.size();
+       vec(ll,lft);
+rep(0,v.size(),1){
+    lft.push_back(0);
+}
+
+vec(ll,rgt);
+rep(0,v.size(),1){
+    rgt.push_back(0);
+}
+
+stack<ll> st;
+rep(0,v.size(),1){
+if(st.size()==0){
+    st.push(i);
+    continue;
+}
+
+if(v[i]>v[st.top()]){
+    st.push(i);
+    continue;
+}
+ll count = 0;
+while(st.size()>0 && v[i]<=v[st.top()]){
+count+=lft[st.top()];
+count++;
+st.pop();
+}
+
+lft[i] = count;
+st.push(i);
+}
+
+
+while(st.size()){
+    st.pop();
+}
+
+
+for(ll i = v.size()-1;i>=0; i--){
+if(st.size()==0){
+    st.push(i);
+    continue;
+}
+
+if(v[i]>v[st.top()]){
+    st.push(i);
+    continue;
+}
+ll count = 0;
+while(st.size()>0 && v[i]<=v[st.top()]){
+count+=rgt[st.top()];
+count++;
+st.pop();
+}
+
+rgt[i] = count;
+st.push(i);
+}
+
+
+ll m_area = INT_MIN;
+
+for(ll i =0; i<v.size(); i++){
+ 
+    m_area = max(m_area,(lft[i]+rgt[i]+1)*v[i]);
+}
+
+return m_area;
+    }
+};
