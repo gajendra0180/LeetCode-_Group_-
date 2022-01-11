@@ -3196,13 +3196,12 @@ Questions:
 
 Gajendra -> https://leetcode.com/problems/minimum-falling-path-sum/
 Karan -> https://leetcode.com/problems/add-binary/
+ASHISH -> https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/
 
 
-FROM ASHISH
-https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/
-
-
-solution by ashish
+------------------------------------------------------------------------
+Solver:Ashish
+Setter:AShish
 
 #define ll int
 #define vec(type,name) vector<type> name;
@@ -3282,3 +3281,52 @@ for(ll i =0; i<v.size(); i++){
 return m_area;
     }
 };
+
+
+
+
+Solver:Gajendra
+Setter:Gajendra
+
+class Solution {
+public:
+    
+    int t[101][101];
+    int minn(vector<vector<int>>& matrix,int i,int j)
+    {
+        if(j>=matrix[0].size()||j<0)
+            return 1e9;
+        
+        if(i==matrix.size())
+            return 0;
+        
+        if(t[i][j]!=-1)
+            return t[i][j];
+        
+        return t[i][j] = matrix[i][j]+min(minn(matrix,i+1,j-1),min(minn(matrix,i+1,j),minn(matrix,i+1,j+1)));
+        
+    }
+    
+    int minFallingPathSum(vector<vector<int>>& matrix) {
+        int ans=INT_MAX;
+        for(int i=0;i<101;i++)
+            for(int j=0;j<101;j++)
+                t[i][j]=-1;
+        
+        for(int i=0;i<matrix[0].size();i++)
+        {
+            int res1=minn(matrix,0,i);
+            ans=min(ans,res1);
+        }
+        return ans;
+    }
+};
+
+
+--------------------------------------------------------------------------
+
+Questions:
+
+Date:11/01/2022
+
+Gajendra -> https://leetcode.com/problems/next-greater-element-iii/
