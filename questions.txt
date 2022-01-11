@@ -3397,4 +3397,26 @@ public:
 };
 
 
+Solver -> Arpit
+Setter -> Karan
+
+class Solution {
+public:
+    int res=0;
+      void helper(TreeNode* root,int sum){
+          if(root==NULL){
+              return;
+          }
+          sum=2*sum+(root->val);
+          if(!root->left && !root->right){
+              res+=sum;
+          }
+          helper(root->left,sum);
+          helper(root->right,sum);
+      }
+    int sumRootToLeaf(TreeNode* root) {
+        helper(root,0);
+        return res;
+    }
+};
 --------------------------------------------------------
