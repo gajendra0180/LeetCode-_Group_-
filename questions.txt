@@ -3470,4 +3470,45 @@ public:
         return res;
     }
 };
+
+
+Solver ->Gajendra
+Setter ->Karan
+
+class Solution {
+public:
+    long long int res=0;
+    void traverse(TreeNode* r ,string n)
+    {
+        if(r->left==NULL&&r->right==NULL)
+        {
+            n.push_back(r->val+'0');
+            bitset<32>b(n);
+             res+=b.to_ulong();
+        }
+            n.push_back(r->val+'0');
+        if(r->left==NULL&&r->right!=NULL){
+        traverse(r->right,n);
+            }
+        else if(r->left!=NULL&&r->right==NULL){
+             traverse(r->left,n);
+        }
+        else if(r->left!=NULL&&r->right!=NULL)
+        {
+             traverse(r->left,n);
+           traverse(r->right,n);
+        }
+    }
+    
+    int sumRootToLeaf(TreeNode* root) {
+        traverse(root,"");
+        return res;
+    }
+};
+
 --------------------------------------------------------
+
+Date: 12/01/2022
+
+Questions:
+Gajendra -> https://leetcode.com/problems/insert-into-a-binary-search-tree/submissions/
