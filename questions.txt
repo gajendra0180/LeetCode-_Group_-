@@ -3511,4 +3511,34 @@ public:
 Date: 12/01/2022
 
 Questions:
-Gajendra -> https://leetcode.com/problems/insert-into-a-binary-search-tree/submissions/
+Gajendra -> https://leetcode.com/problems/insert-into-a-binary-search-tree/
+
+solver-> Arpit
+setter-> Gajendra
+
+class Solution {
+public:
+    TreeNode* insertIntoBST(TreeNode* root, int val) {
+        TreeNode* q=root;
+       TreeNode* newnode=new TreeNode(val);
+        if(!q) return newnode;
+       TreeNode* pre=root;
+        while(root!=NULL){
+          if(val<root->val){
+              pre=root;
+              root=root->left;
+          }
+         else{
+             pre=root;
+             root=root->right;
+         }
+        }
+        if(val<pre->val){
+            pre->left=newnode;
+        }
+        else{
+            pre->right=newnode;
+        }
+        return q;
+    }
+};
