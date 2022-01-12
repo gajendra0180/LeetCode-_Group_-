@@ -3512,6 +3512,7 @@ Date: 12/01/2022
 
 Questions:
 Gajendra -> https://leetcode.com/problems/insert-into-a-binary-search-tree/
+Karan -> https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
 solver-> Arpit
 setter-> Gajendra
