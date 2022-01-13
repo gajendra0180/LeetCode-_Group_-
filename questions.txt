@@ -3564,11 +3564,14 @@ public:
 };
 
 ---------------------------------------------------------------------------------
+
+
 Date: 13/01/2022
 
 Questions
 Arpit-> https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
 Karan-> https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
+Gajendra-> https://leetcode.com/problems/reverse-linked-list/
 
 ---------------------------------------------------------------------------------
 Solutions:
@@ -3593,3 +3596,54 @@ public:
         return count;
     }
 };
+
+Solver -> Gajendra
+Setter-> Karan
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head==NULL||head->next==NULL)
+            return head;
+        ListNode* t=reverseList(head->next);
+        head->next->next=head;
+        head->next=NULL;
+        return t;
+    }
+    int pairSum(ListNode* head) {
+        ListNode* slow=head,*fast=head;
+        while(fast!=NULL&&fast->next!=NULL)
+        {
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        cout<<slow->val<<endl;
+        ListNode* temp=reverseList(slow);
+        int sum=0;
+        while(temp!=NULL)
+        {
+            sum=max(sum,temp->val+head->val);
+            head=head->next;
+            temp=temp->next;
+        }
+        return sum;
+        
+    }
+};
+
+Solver -> Gajendra
+Setter -> Gajendra
+
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head==NULL||head->next==NULL)
+            return head;
+        ListNode* t=reverseList(head->next);
+        head->next->next=head;
+        head->next=NULL;
+        return t;
+    }
+};
+
+--------------------------------------------------------------------
