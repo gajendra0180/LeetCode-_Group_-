@@ -3647,3 +3647,49 @@ public:
 };
 
 --------------------------------------------------------------------
+
+From Ashish:
+
+https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/submissions/
+
+
+Ans from Ashish
+
+
+class Solution {
+public:
+    int i = 0;
+    TreeNode* maker(TreeNode* &root, int x, int y,vector<int>&p){
+        if(i>=p.size()){
+            return NULL;
+        }
+        if(x>y){return NULL;}
+        if(!(p[i]>=x && p[i]<=y)){
+            return NULL;
+        }
+        
+        root = new TreeNode(p[i]);
+        int t = p[i];
+        i++;
+    TreeNode* lft = maker(root->left,-2000,t-1,p);
+    TreeNode* rgt = maker(root->right,t+1,max(t+1,y),p); 
+        root->left = lft;
+        root->right = rgt;
+        return root;
+            
+    }
+    
+    
+    
+    TreeNode* bstFromPreorder(vector<int>& p) {
+        
+        
+        TreeNode* root = NULL;
+      return maker(root,-2000,2000,p);
+        
+        
+    }
+};
+
+
+
