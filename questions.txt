@@ -3676,9 +3676,11 @@ public:
 
 --------------------------------------------------------------------
 
-From Ashish:
+Questions
 
-https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/submissions/
+
+Ashish->https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/submissions/
+Karan-> https://leetcode.com/problems/product-of-array-except-self/submissions/
 
 
 Ans from Ashish
