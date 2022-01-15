@@ -3676,15 +3676,17 @@ public:
 
 --------------------------------------------------------------------
 
-Questions
+Date: 14/01/2022
 
-
+Questions:
 Ashish->https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/submissions/
 Karan-> https://leetcode.com/problems/product-of-array-except-self/submissions/
 
 
-Ans from Ashish
+Solution :
+----------------------------------------------------------------------------------------
 
+Ans from Ashish
 
 class Solution {
 public:
@@ -3722,4 +3724,53 @@ public:
 };
 
 
+Solver -> Gajendra
+Setter-> Karan
 
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int count_zero=0,prod=1;
+        for(auto i:nums)
+        {
+            if(i==0)
+                count_zero++;
+            if(i!=0)
+                prod*=i;
+            if(count_zero>1)
+            {
+                for(auto &i:nums)
+                    i=0;
+                return nums;
+            }
+        }
+        if(count_zero==1)
+        {
+            for(auto &i:nums)
+            {
+                if(i!=0)
+                    i=0;
+                else
+                    i=prod;
+            }
+            return nums;
+        }
+        else
+        {
+            vector<int>right{1};
+            for(int i=nums.size()-1;i>=0;i--)
+                right.push_back(right.back()*nums[i]); 
+            right.pop_back();
+            reverse(right.begin(),right.end());
+            int prod=1;
+            for(int i=0;i<nums.size();i++)
+            {
+                right[i]=prod*right[i];
+                prod*=nums[i];
+            }
+            return right;
+        }
+    }
+};
+
+--------------------------------------------------------------------------
