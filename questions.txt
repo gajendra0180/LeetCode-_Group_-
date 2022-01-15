@@ -3779,3 +3779,4 @@ Date: 15/01/2022
 
 Questions:
 Gajendra-> https://leetcode.com/problems/jump-game/
+Karan -> https://leetcode.com/problems/number-of-laser-beams-in-a-bank/
