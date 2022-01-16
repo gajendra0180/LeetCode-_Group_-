@@ -3811,6 +3811,40 @@ public:
     }
 };
 
+Solver -> Gajendra
+Setter -> Gajendra
+
+class Solution {
+public:
+    int arr[10001];
+    bool can(int i,vector<int>&v)
+    {
+        if(i>=v.size() || i+v[i]>=v.size()-1)
+            return true;
+        
+        if(v[i]==0)
+            return false;
+        
+        if(arr[i]!=-1)
+            return arr[i];
+        
+        bool ans=false;
+        for(int j=i+1;j<=i+v[i];j++)
+            ans = ans || can(j,v);
+        
+        return arr[i] = ans;
+    }
+    bool canJump(vector<int>& nums) {
+        for(int i=0;i<=nums.size();i++)
+            arr[i]=-1;
+        return can(0,nums);
+    }
+};
 
 
 -------------------------------------------------------------------------
+
+
+Date:16/01/2022
+Questions: 
+Gajendra-> https://leetcode.com/problems/jump-game-ii/
