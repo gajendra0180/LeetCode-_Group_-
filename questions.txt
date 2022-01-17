@@ -3890,3 +3890,8 @@ public:
 };
 
 ----------------------------------------------------------------------------
+
+Date:17/01/2022
+Questions: 
+
+Karan -> https://leetcode.com/problems/word-pattern/
