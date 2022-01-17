@@ -3849,3 +3849,44 @@ Date:16/01/2022
 Questions: 
 Gajendra-> https://leetcode.com/problems/jump-game-ii/
 Karan -> https://leetcode.com/problems/maximize-distance-to-closest-person/
+
+-----------------------------------------------------------
+Solutions:
+
+Solver -> Gajendra
+Setter -> Karan
+class Solution {
+public:
+    int maxDistToClosest(vector<int>& v) {
+        int beg=0,end=v.size()-1,res=0;
+        while(beg<v.size()&&v[beg]!=1)
+            beg++;
+        while(end>=0&&v[end]!=1)
+            end--;
+        beg=beg;
+        end=v.size()-end-1;
+        int i=0;
+        while(i<v.size())
+        {
+            if(v[i]==1)
+            {
+                int a=i;
+                i++;
+                while(i<v.size()&&v[i]==0)
+                    i++;
+                int b=i;
+                if(b==v.size())
+                    return max(res,max(beg,end));
+                else
+                int distance_from_left=(a+b)/2-a;
+                int distance_from_right=b-(a+b)/2;
+                res=max(res,min(distance_from_left,distance_from_right));
+            }
+            else
+                i++;
+        }
+        return 0;
+    }
+};
+
+----------------------------------------------------------------------------
