@@ -3895,3 +3895,10 @@ Date:17/01/2022
 Questions: 
 
 Karan -> https://leetcode.com/problems/word-pattern/
+
+----------------------------------------------------------------------------
+
+Date:17/01/2022
+Questions: 
+
+Karan -> https://leetcode.com/problems/can-place-flowers/
