@@ -3902,3 +3902,53 @@ Date:17/01/2022
 Questions: 
 
 Karan -> https://leetcode.com/problems/can-place-flowers/
+
+ASHISH:
+https://leetcode.com/problems/koko-eating-bananas/submissions/
+
+
+
+ASHISH HAS
+SOLVED KARAN'S QUE
+class Solution {
+public:
+    bool canPlaceFlowers(vector<int>& f, int n) {
+        
+        vector<int> v = f;
+        for(int i =0; i<f.size(); i++){
+            if(f[i]){
+                if(i+1<f.size()){
+                    v[i+1] = 1;
+                }
+                 if(i-1>=0){
+                     v[i-1] = 1;
+                 }
+            }
+        }
+        
+        
+        
+//         done with v
+        int total = 0;
+        int curr = 0;
+        for(int i =0; i<v.size(); i++){
+            
+            if(v[i]==0){
+                curr++;
+            }
+            else{
+                int t= curr%2? (curr+1)/2:curr/2;
+                curr = 0;
+                total+=t;      
+                
+            }
+              
+        }
+           int t= curr%2? (curr+1)/2:curr/2;
+                curr = 0;
+                total+=t;
+        
+    return total>=n;
+        
+    }
+};
