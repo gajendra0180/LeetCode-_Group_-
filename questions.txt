@@ -3953,3 +3953,34 @@ Date: 20/01/2022
 Ashish -> https://leetcode.com/problems/koko-eating-bananas/submissions
 Gajendra -> https://leetcode.com/problems/permutations/
 
+
+----------------------------------------------------------
+Solutions:
+
+Solver -> Gajendra
+Setter -> Ashish
+
+class Solution:
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        def condition(value) -> bool:
+            time=0
+            for gp in piles:
+                time+=ceil(gp/value)
+            print(value,time)
+            return time<=h
+        
+        left, right = 1,max(piles)
+        while left < right:
+            mid = left + (right - left) // 2
+            if condition(mid):
+                right = mid
+            else:
+                left = mid + 1
+        return left
+    
+
+
+
+
+
+-----------------------------------------------------------------------------
