@@ -3896,6 +3896,67 @@ Questions:
 
 Karan -> https://leetcode.com/problems/word-pattern/
 
+
+Solutions:
+
+Solver-> Gajendra
+Setter -> Karan
+
+class Solution {
+public:
+    bool wordPattern(string pattern, string s) {
+        
+        vector<int> v1,v2;
+        map<char,int> m;
+        int c=0;
+        for(auto i:pattern)
+        {
+            if(m.find(i)!=m.end())
+            v1.push_back(m[i]);
+            else
+            {
+                v1.push_back(c);
+                m[i]=c;
+                c++;
+            }
+        }
+        int i=0;string str;
+        s=s+" ";
+        vector<string> v;
+        while(i<s.size())
+        {
+            if(s[i]==' ')
+            {
+                v.push_back(str);
+                str="";
+            }
+            else
+            {
+                str.push_back(s[i]);
+            }
+            i++;
+        }
+        map<string,int> m1;c=0;
+        for(auto i:v)
+        {
+            if(m1.find(i)!=m1.end())
+                v2.push_back(m1[i]);
+            else
+            {
+                v2.push_back(c);
+                m1[i]=c;
+                c++;
+            }
+        }
+        
+        return v1==v2;
+    }
+};
+
+
+
+
+
 ----------------------------------------------------------------------------
 
 Date:17/01/2022
