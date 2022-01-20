@@ -3903,11 +3903,6 @@ Questions:
 
 Karan -> https://leetcode.com/problems/can-place-flowers/
 
-ASHISH:
-https://leetcode.com/problems/koko-eating-bananas/submissions/
-
-
-
 ASHISH HAS
 SOLVED KARAN'S QUE
 class Solution {
@@ -3952,3 +3947,9 @@ public:
         
     }
 };
+--------------------------------------------\
+Date: 20/01/2022
+
+Ashish -> https://leetcode.com/problems/koko-eating-bananas/submissions
+Gajendra -> https://leetcode.com/problems/permutations/
+
