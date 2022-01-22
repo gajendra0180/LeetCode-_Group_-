@@ -4024,7 +4024,6 @@ Questions: 21/01/2022
 
 Gajendra -> https://leetcode.com/problems/gas-station/
 
-
 ---------------------------------------------------------------
 Solutions: 
 Solver -> Gajendra
@@ -4033,31 +4032,32 @@ Setter -> Gajendra
 class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
-        int s=0;
-        for(int i=0;i<gas.size();i++)
-            s+=gas[i]-cost[i];
-        if(s<0)
-            return -1;
-        int start=0;s=0;
+        int t[100000]={0};
         for(int i=0;i<gas.size();i++)
         {
-            s+=gas[i]-cost[i];
-            if(s<0)
-               { start=i+1;
-                s=0;}
+            if(t[i]==-1)
+                continue;
+            int fuel=0,j=i;
+            while(true)
+            {
+                fuel+=gas[j];
+                if(cost[j]>fuel)
+                    break;
+                else
+                    fuel-=cost[j];
+                
+                t[j]=-1;
+                j=(j+1)%gas.size();
+
+                if(j==i)
+                    return i;
+            }
         }
-        return start;
+        return -1;
     }
 };
 
------------------------------------------------------------------------------------------
-
-
-
-
-
 Ashish:  Gas Station from leetcode
-
 SOLN from ashish
 class Solution {
 public:
@@ -4066,51 +4066,27 @@ public:
            return gas[0]>=cost[0]?0:-1;
         }
         vector<int> track;
-        
-        
         for(int i =0; i<cost.size(); i++){
-            
             track.push_back(gas[i]-cost[i]);
-            
-            
         }
-        
-    
-        
-        for(int i = 1; i<track.size(); i++){
-            
+        for(int i = 1; i<track.size(); i++){   
             track[i]+=track[i-1];
-            
         }
-        
-        
-        
         multiset<int> store1;
         multiset<int> store;
-        
-        
         for(auto x: track){
             store1.insert(x);
         }
-        
-        
-        
-        for(int i=0; i<track.size(); i++){
-            
+        for(int i=0; i<track.size(); i++){   
             if(i==0){
-                
                 int min = *store1.begin();
           
              if(min>=0){
                  return 0;
              }
-                
             store1.erase(store1.find(track[i]));
-            store.insert(track[i]);
-            
-        }
-            
-            
+            store.insert(track[i]);   
+        }       
     else{
         int min = *store1.begin();
         int t = min-track[i-1];
@@ -4120,14 +4096,10 @@ public:
         }
         store.insert(track[i]);
         store1.erase(store1.find(track[i]));
-    }
-        
-        
-        }       
-        
+    } }       
         return -1;
-        
-        
-        
     }
 };
+
+
+---------------------------------------------------------------------------------
