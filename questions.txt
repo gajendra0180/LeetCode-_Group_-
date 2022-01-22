@@ -4103,3 +4103,62 @@ public:
 
 
 ---------------------------------------------------------------------------------
+
+Ashish Question
+
+https://leetcode.com/problems/partition-labels/submissions/
+
+class Solution {
+public:
+    vector<int> partitionLabels(string s) {
+//         stack for storing intervals
+        stack<vector<int>> st;
+        map<char,int> track;
+//         for knowing farthest index of any char, if -1 then not found yet
+        for(auto x: s){
+            track[x] = -1;
+        }
+        
+        
+//     iterating string from back and store intervals and remove accoding to below algorithms    
+        for(int i = s.length()-1; i>=0; i--){
+            
+            if(track[s[i]]==-1){
+                track[s[i]] = i;
+                st.push({i,i});
+            }
+            
+            else{
+                
+                
+                int start = i;
+                int end = track[s[i]];
+                int tt = end;
+                while(st.size() && st.top()[0]<=end){
+                    tt = max(tt,st.top()[1]);
+                    st.pop();
+                }
+                st.push({start,tt});
+                
+                
+            }
+            
+            
+        }
+        
+        
+        
+  vector<int> ans;
+        while(st.size()){
+            vector<int> v = st.top();
+            ans.push_back(v[1]-v[0]+1);
+                st.pop();
+        }
+        
+     
+        return ans;
+        
+        
+        
+    }
+};
