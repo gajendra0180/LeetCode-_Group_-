@@ -4162,3 +4162,11 @@ public:
         
     }
 };
+
+
+-----------------------------------------------------------------------------
+
+
+Questions: 21/01/2022
+
+Karan -> https://leetcode.com/problems/container-with-most-water/
