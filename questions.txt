@@ -4197,3 +4197,46 @@ public:
 
 --------------------------------------------------------
 
+
+
+Date : 23/01/2022
+
+Questions:
+Gajendra->https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/submissions/
+
+---------------------------
+Solutions:
+
+Solver: Gajendra
+Setter: Gajendra
+
+ var findLonely = function(arr) {
+
+    function getMapValue(ele) {
+      if (map1.get(ele) == undefined) return 0;
+      return map1.get(ele);
+    }    
+    
+    const map1 = new Map();
+  
+    const res = [];
+
+    for (const ele of arr) {
+      map1.set(ele, getMapValue(ele) + 1);
+    }
+    
+
+    for (const ele of arr) {
+      if (
+        map1.get(ele) == 1 &&
+        getMapValue(ele - 1) == 0 &&
+        getMapValue(ele + 1) == 0
+      )
+        res.push(ele);
+    }
+    
+    return res;
+    
+};
+
+------------------------------------------------------------------
