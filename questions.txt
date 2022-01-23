@@ -4170,3 +4170,30 @@ public:
 Questions: 21/01/2022
 
 Karan -> https://leetcode.com/problems/container-with-most-water/
+
+-----------------------------------------
+Solutions:
+
+Solver -> Gajendra
+Setter -> Karan
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int left=0,right=height.size()-1;
+        int water=INT_MIN;
+        while(left<right)
+        {
+            water=max(water,min(height[left],height[right])*(right-left));
+            if(height[left]<height[right])
+                left++;
+            else
+                right--;
+        }
+        return water;
+    }
+    
+};
+
+--------------------------------------------------------
+
