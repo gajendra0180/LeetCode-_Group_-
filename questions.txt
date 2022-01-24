@@ -4244,3 +4244,13 @@ Setter: Gajendra
 ASHISH
 
 https://leetcode.com/problems/longest-valid-parentheses/submissions/
+
+--------------------------------------------------------
+
+
+
+Date : 24/01/2022
+
+Questions:
+
+Karan -> https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
