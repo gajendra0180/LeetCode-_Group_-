@@ -4246,15 +4246,11 @@ ASHISH
 https://leetcode.com/problems/longest-valid-parentheses/submissions/
 
 --------------------------------------------------------
-
 Date : 24/01/2022
-
 Questions:
-
 Karan -> https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
 Gajendra -> https://leetcode.com/problems/sequential-digits
 Ashish -> https://leetcode.com/problems/binary-tree-right-side-view/
-
 ---------------------------
 Solutions:
 Setter: Karan
@@ -4290,3 +4286,8 @@ Solver: Gajendra
 };
 
 ------------------------------------------------------------------
+
+Date: 25/01/2022
+
+Questions:
+Gajendra -> https://leetcode.com/problems/next-permutation/
