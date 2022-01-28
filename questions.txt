@@ -4300,3 +4300,10 @@ Date:26/01/2022
 
 Questions:
 Gajendra-> https://leetcode.com/problems/next-permutation/
+
+
+
+Ashish Question
+
+https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/submissions/
+
