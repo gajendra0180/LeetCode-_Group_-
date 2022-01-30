@@ -4313,3 +4313,10 @@ Gajendra -> https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array
 Date: 29/01/2022
 Questions:
 Gajendra -> https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
+
+
+---------------------------------------------------------------------------
+
+Date:30/01/2022
+Questions:
+Gajendra -> https://leetcode.com/problems/find-substring-with-given-hash-value/
