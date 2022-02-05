@@ -4325,3 +4325,64 @@ Gajendra -> https://leetcode.com/problems/find-substring-with-given-hash-value/
 Date:3/02/2022
 Questions:
 Karan -> https://leetcode.com/problems/find-all-anagrams-in-a-string/
+Ashish: https://leetcode.com/problems/find-substring-with-given-hash-value/submissions/
+
+
+
+
+Solution by Ashish to Ashish 
+
+
+#define ll long long
+
+class Solution {
+public:
+       string solve(string&s,ll p, ll m, ll k, ll hv)
+{
+    ll hash = 0;
+    ll pk = 1;
+    ll kk = k-1;
+    //  finding pk
+    while(kk--){
+    pk*=p;
+    pk%=m;
+    }
+
+
+ll answer = -1;
+ll i =  s.length()-1;
+ll cnt = 0;
+while(i>=0){
+if(cnt>=k){
+ll to_be_remove = s[i+k]-'a'+1;
+hash = (hash-(to_be_remove*pk)%m+m)%m;
+hash = (hash*p+(s[i]-'a'+1))%m;
+}
+else{
+hash = (hash*p+(s[i]-'a'+1))%m;
+}
+cnt++;
+
+if(cnt>=k && hv==hash) answer = i;
+i--;
+}
+
+
+
+string final = "";
+
+for(ll i = answer; i<=answer+k-1; i++){
+    final+=s[i];
+}
+return final;
+
+
+}
+    
+    
+    string subStrHash(string s, int p, int m, int k, int hv) {
+        
+        string res = solve(s,p,m,k,hv);
+        return res;
+    }
+};
