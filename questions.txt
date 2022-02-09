@@ -4386,3 +4386,10 @@ return final;
         return res;
     }
 };
+---------------------------------------------------------------------------
+
+Date:9/02/2022
+
+Questions:
+
+Karan -> https://leetcode.com/problems/k-diff-pairs-in-an-array/
