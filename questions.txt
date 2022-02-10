@@ -4393,3 +4393,11 @@ Date:9/02/2022
 Questions:
 
 Karan -> https://leetcode.com/problems/k-diff-pairs-in-an-array/
+
+-------------------------------------------------------------------------
+Date:10/02/2022
+Questions for weekend:
+
+Gajendra -> https://leetcode.com/problems/find-substring-with-given-hash-value/submissions/
+	https://leetcode.com/problems/3sum/submissions/
+https://leetcode.com/problems/3sum-closest/
