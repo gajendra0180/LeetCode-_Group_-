@@ -4401,3 +4401,9 @@ Questions for weekend:
 Gajendra -> https://leetcode.com/problems/find-substring-with-given-hash-value/submissions/
 	https://leetcode.com/problems/3sum/submissions/
 https://leetcode.com/problems/3sum-closest/
+
+
+13 FEB
+From Ashish
+
+https://leetcode.com/contest/biweekly-contest-71/problems/partition-array-according-to-given-pivot/
