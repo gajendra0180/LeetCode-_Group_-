@@ -4407,3 +4407,9 @@ https://leetcode.com/problems/3sum-closest/
 From Ashish
 
 https://leetcode.com/contest/biweekly-contest-71/problems/partition-array-according-to-given-pivot/
+
+
+-------------------------------------------------------------------------
+Date:10/02/2022
+
+Karan -> https://leetcode.com/problems/swap-nodes-in-pairs/
