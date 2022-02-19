@@ -4413,3 +4413,11 @@ https://leetcode.com/contest/biweekly-contest-71/problems/partition-array-accord
 Date:10/02/2022
 
 Karan -> https://leetcode.com/problems/swap-nodes-in-pairs/
+
+
+-------------------------------------------------------------------------
+
+
+Date:19/02/2022
+
+Karan -> https://leetcode.com/problems/find-three-consecutive-integers-that-sum-to-a-given-number/
