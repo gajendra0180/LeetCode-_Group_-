@@ -4429,3 +4429,4 @@ Karan -> https://leetcode.com/problems/find-three-consecutive-integers-that-sum-
 Date:20/02/2022
 
 Karan -> https://leetcode.com/problems/maximum-split-of-positive-even-integers/
+Gajendra -> https://leetcode.com/problems/3sum/submissions/ , https://leetcode.com/problems/3sum-closest/ , https://leetcode.com/problems/decode-ways/
