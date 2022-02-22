@@ -4437,3 +4437,10 @@ Gajendra -> https://leetcode.com/problems/3sum/submissions/ , https://leetcode.c
 Date:21/02/2022
 
 Karan -> https://leetcode.com/problems/majority-element/
+
+-------------------------------------------------------------------------
+
+
+Date:22/02/2022
+
+Karan -> https://leetcode.com/problems/excel-sheet-column-number/
