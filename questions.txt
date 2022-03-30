@@ -4472,3 +4472,10 @@ Karan -> https://leetcode.com/problems/is-subsequence/
 Date:02/03/2022
 
 Karan -> https://leetcode.com/problems/maximize-the-topmost-element-after-k-moves/
+
+-------------------------------------------------------------------------
+
+
+Date:31/03/2022
+
+Karan -> https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
