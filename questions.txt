@@ -4486,3 +4486,10 @@ Karan -> https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strin
 Date:08/04/2022
 
 Karan -> https://leetcode.com/problems/last-stone-weight/
+
+-------------------------------------------------------------------------
+
+
+Date:14/04/2022
+
+Karan -> https://leetcode.com/problems/search-in-a-binary-search-tree/submissions/
